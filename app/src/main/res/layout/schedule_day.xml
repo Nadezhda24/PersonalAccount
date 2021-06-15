@@ -10,11 +10,13 @@
     android:layout_marginEnd="3dp"
     android:layout_marginRight="3dp"
     android:background="@drawable/schedule_fon"
+    android:paddingLeft="5dp"
     android:paddingTop="2dp"
+    android:paddingRight="5dp"
     android:paddingBottom="2dp">
 
     <TextView
-        android:id="@+id/ClassNumder"
+        android:id="@+id/LessonNumder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -32,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/EndTime"
+        android:id="@+id/LessonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -41,12 +43,12 @@
         android:text="8:30"
         android:textSize="14sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/StartTime"
-        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
-        app:layout_constraintStart_toStartOf="@+id/ClassNumder" />
+        app:layout_constraintBottom_toTopOf="@+id/LessonEnd"
+        app:layout_constraintEnd_toEndOf="@+id/LessonEnd"
+        app:layout_constraintStart_toStartOf="@+id/LessonEnd" />
 
     <TextView
-        android:id="@+id/StartTime"
+        android:id="@+id/LessonEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -55,25 +57,23 @@
         android:text="10:00"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/EndTime"
-        app:layout_constraintStart_toStartOf="@+id/EndTime" />
+        tools:layout_editor_absoluteX="3dp" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="5dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="2dp"
         android:background="#437B95"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/EndTime"
+        app:layout_constraintStart_toEndOf="@+id/LessonEnd"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
     </FrameLayout>
 
     <TextView
-        android:id="@+id/NameSubject"
+        android:id="@+id/LessonName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -86,31 +86,31 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/frameLayout"
-        app:layout_constraintTop_toTopOf="@+id/ClassNumder" />
+        app:layout_constraintTop_toTopOf="@+id/LessonNumder" />
 
     <TextView
-        android:id="@+id/TypeSubject"
+        android:id="@+id/LessonRoom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text=" 12-411"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/RoomSubject"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/LessonType"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/RoomSubject" />
+        app:layout_constraintTop_toBottomOf="@+id/LessonType" />
 
     <TextView
-        android:id="@+id/RoomSubject"
+        android:id="@+id/LessonType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Лекция"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/NameSubject"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/LessonName"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/NameSubject" />
+        app:layout_constraintTop_toBottomOf="@+id/LessonName" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -119,24 +119,24 @@
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/TeacherSubject"
+        app:layout_constraintEnd_toStartOf="@+id/LessonTeacher"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/TeacherSubject"
+        app:layout_constraintTop_toTopOf="@+id/LessonTeacher"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/user" />
 
     <TextView
-        android:id="@+id/TeacherSubject"
+        android:id="@+id/LessonTeacher"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Ужаринский А.Ю."
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/StartTime"
-        app:layout_constraintEnd_toEndOf="@+id/TypeSubject"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/LessonEnd"
+        app:layout_constraintEnd_toEndOf="@+id/LessonRoom"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/TypeSubject" />
+        app:layout_constraintTop_toBottomOf="@+id/LessonRoom" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -144,9 +144,9 @@
         android:layout_height="16dp"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
-        app:layout_constraintEnd_toStartOf="@+id/TypeSubject"
+        app:layout_constraintEnd_toStartOf="@+id/LessonRoom"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/TypeSubject"
+        app:layout_constraintTop_toTopOf="@+id/LessonRoom"
         app:srcCompat="@drawable/roomsubject" />
 
     <ImageView
@@ -155,9 +155,9 @@
         android:layout_height="16dp"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
-        app:layout_constraintEnd_toStartOf="@+id/RoomSubject"
-        app:layout_constraintStart_toStartOf="@+id/NameSubject"
-        app:layout_constraintTop_toTopOf="@+id/RoomSubject"
+        app:layout_constraintEnd_toStartOf="@+id/LessonType"
+        app:layout_constraintStart_toStartOf="@+id/LessonName"
+        app:layout_constraintTop_toTopOf="@+id/LessonType"
         app:srcCompat="@drawable/typesubject" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,16 +23,23 @@ public class ScheduleDayAdapter extends RecyclerView.Adapter<ScheduleDayAdapter.
     @Override
     public ScheduleDayAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = inflater.inflate(R.layout.lesson_day_layout, parent, false);
+        View view = inflater.inflate(R.layout.schedule_day, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ScheduleDayAdapter.ViewHolder holder, int position) {
         ScheduleDay ScheduleDay = ScheduleDays.get(position);
+        holder.LessonNumder.setText(ScheduleDay.GetLessonNumder());
+        holder.LessonStart.setText(ScheduleDay.GetLessonStart());
+        holder.LessonEnd.setText(ScheduleDay.GetLessonEnd());
+        holder.LessonName.setText(ScheduleDay.GetLessonName());
+        holder.LessonType.setText(ScheduleDay.GetLessonType());
+        holder.LessonRoom.setText(ScheduleDay.GetLessonRoom());
+        holder.LessonTeacher.setText(ScheduleDay.GetLessonTeacher());
 
-        holder.LessonsName.setText(ScheduleDay.GetLessonName());
-        holder.LessonsTeaher.setText(ScheduleDay.GetTeacherName());
+
+
     }
 
     @Override
@@ -42,11 +49,18 @@ public class ScheduleDayAdapter extends RecyclerView.Adapter<ScheduleDayAdapter.
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        final TextView LessonsName, LessonsTeaher;
+        final TextView LessonNumder,LessonStart,
+                LessonEnd, LessonName, LessonType,
+                LessonRoom, LessonTeacher;
         ViewHolder(View view){
             super(view);
-            LessonsName = (TextView) view.findViewById(R.id.LessonsName);
-            LessonsTeaher = (TextView) view.findViewById(R.id.LessonsTeacher);
+            LessonNumder = (TextView) view.findViewById(R.id.LessonNumder);
+            LessonStart = (TextView) view.findViewById(R.id.LessonStart);
+            LessonEnd = (TextView) view.findViewById(R.id.LessonEnd);
+            LessonName = (TextView) view.findViewById(R.id.LessonName);
+            LessonType = (TextView) view.findViewById(R.id.LessonType);
+            LessonRoom = (TextView) view.findViewById(R.id.LessonRoom);
+            LessonTeacher = (TextView) view.findViewById(R.id.LessonTeacher);
         }
     }
 
