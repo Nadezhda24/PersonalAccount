@@ -7,4 +7,9 @@
     <color name="teal_700">#68BCEC</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="LK">#00B796</color>
+    <color name="LB">#86269B</color>
+    <color name="PZ">#00D2F1</color>
+    <color name="Exam">#CC0063</color>
+
 </resources>

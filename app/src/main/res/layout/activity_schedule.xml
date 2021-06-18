@@ -109,7 +109,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:text="Понедельник, 02.03.2021"
-                android:textColor="@color/purple_500"
+                android:textColor="?attr/actionMenuTextColor"
                 app:layout_constraintBottom_toTopOf="@+id/RecyclerViewScheduleDay"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
