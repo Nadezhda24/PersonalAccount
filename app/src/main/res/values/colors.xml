@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#68BCEC</color>
-    <color name="purple_500">#2C89BD</color>
-    <color name="purple_700">#2C89BD</color>
+    <color name="purple_200">#6CA4D0</color>
+    <color name="purple_500">#6CA4D0</color>
+    <color name="purple_700">#6CA4D0</color>
     <color name="teal_200">#68BCEC</color>
     <color name="teal_700">#68BCEC</color>
     <color name="black">#FF000000</color>
@@ -11,5 +11,6 @@
     <color name="LB">#86269B</color>
     <color name="PZ">#00D2F1</color>
     <color name="Exam">#CC0063</color>
+    <color name="Menu">#6CA4D0</color>
 
 </resources>

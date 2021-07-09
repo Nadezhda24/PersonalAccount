@@ -1,4 +1,4 @@
-package com.example.personalaccount;
+package com.example.personalaccount.schedule;
 
 import java.util.Date;
 

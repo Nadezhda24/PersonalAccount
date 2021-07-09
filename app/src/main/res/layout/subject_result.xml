@@ -1,6 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="3dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginEnd="3dp"
+    android:layout_marginRight="3dp"
+    android:background="@drawable/schedule_fon"
+    android:paddingLeft="5dp"
+    android:paddingTop="2dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="2dp">
+
+    <TextView
+        android:id="@+id/SubjectNameTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Дисциплина:"
+        android:textColor="#00416D"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/SubjectTeacherTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Преподаватель:"
+        android:textColor="#00416D"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/SubjectName"
+        app:layout_constraintTop_toBottomOf="@+id/SubjectName" />
+
+    <TextView
+        android:id="@+id/SubjectTypeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Тип промежуточной аттестации:"
+        android:textColor="#00416D"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/SubjectTeacherTitle"
+        app:layout_constraintTop_toBottomOf="@+id/SubjectTeacherTitle" />
+
+    <TextView
+        android:id="@+id/SubjectType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Экзамен"
+        android:textColor="?attr/actionMenuTextColor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/SubjectTypeTitle"
+        app:layout_constraintTop_toTopOf="@+id/SubjectTypeTitle" />
+
+    <TextView
+        android:id="@+id/SubjectResultTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Результат промежуточной аттестации:"
+        android:textColor="#00416D"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/SubjectTypeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/SubjectTypeTitle" />
+
+    <TextView
+        android:id="@+id/SubjectResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Отлично"
+        android:textColor="#00B796"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/SubjectResultTitle"
+        app:layout_constraintTop_toTopOf="@+id/SubjectResultTitle" />
+
+    <TextView
+        android:id="@+id/SubjectTeacher"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Ужаринский А.Ю."
+        android:textColor="?attr/actionMenuTextColor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/SubjectTeacherTitle"
+        app:layout_constraintTop_toTopOf="@+id/SubjectTeacherTitle" />
+
+    <TextView
+        android:id="@+id/SubjectName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Качество и тестирование программного обеспечения"
+        android:textColor="?attr/actionMenuTextColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/SubjectNameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/SubjectNameTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

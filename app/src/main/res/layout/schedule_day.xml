@@ -121,9 +121,9 @@
         android:layout_height="16dp"
         android:layout_marginEnd="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/LessonTeacher"
+        app:layout_constraintEnd_toStartOf="@+id/SubjectNameTitle"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/LessonTeacher"
+        app:layout_constraintTop_toTopOf="@+id/SubjectNameTitle"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/teacher_lesson" />
 
@@ -133,14 +133,14 @@
         android:layout_height="16dp"
         android:layout_marginEnd="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/LessonTeacher"
+        app:layout_constraintEnd_toStartOf="@+id/SubjectNameTitle"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/LessonTeacher"
+        app:layout_constraintTop_toTopOf="@+id/SubjectNameTitle"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/teacher_lesson" />
 
     <TextView
-        android:id="@+id/LessonTeacher"
+        android:id="@+id/SubjectNameTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"

@@ -1,4 +1,4 @@
-package com.example.personalaccount;
+package com.example.personalaccount.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,7 +30,7 @@ public class ScheduleActivity extends AppCompatActivity {
 
         setInitialData();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewScheduleDay);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewResults);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ScheduleDayAdapter ScheduleDayAdapter = new ScheduleDayAdapter(this, ScheduleDays);
 
@@ -56,9 +56,21 @@ public class ScheduleActivity extends AppCompatActivity {
                 startActivity(intent);
             }
             break;
-
-
+            case R.id.bottom_menu_message:{
+                Intent intent = new Intent(ScheduleActivity.this, MessageSystemActivity.class);
+                startActivity(intent);
+            }
+            break;
+            case R.id.bottom_menu_education:{
+                Intent intent = new Intent(ScheduleActivity.this, EducationActivity.class);
+                startActivity(intent);
+            }
+            break;
+            case R.id.bottom_menu_notes:{
+                Intent intent = new Intent(ScheduleActivity.this, NoteActivity.class);
+                startActivity(intent);
+            }
+            break;
         }
-
     }
 }

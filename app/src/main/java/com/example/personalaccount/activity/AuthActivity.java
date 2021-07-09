@@ -1,10 +1,12 @@
-package com.example.personalaccount;
+package com.example.personalaccount.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.personalaccount.R;
 
 
 public class AuthActivity extends AppCompatActivity {

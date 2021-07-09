@@ -1,4 +1,4 @@
-package com.example.personalaccount;
+package com.example.personalaccount.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.personalaccount.activity.ResultsActivity;
-import com.example.personalaccount.activity.ScheduleActivity;
+import com.example.personalaccount.R;
 
 public class NoteActivity extends AppCompatActivity {
 

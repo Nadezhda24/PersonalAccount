@@ -1,4 +1,4 @@
-package com.example.personalaccount;
+package com.example.personalaccount.schedule;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.personalaccount.R;
 
 import java.util.List;
 
@@ -69,7 +71,7 @@ public class ScheduleDayAdapter extends RecyclerView.Adapter<ScheduleDayAdapter.
             LessonName = (TextView) view.findViewById(R.id.LessonName);
             LessonType = (TextView) view.findViewById(R.id.LessonType);
             LessonRoom = (TextView) view.findViewById(R.id.LessonRoom);
-            LessonTeacher = (TextView) view.findViewById(R.id.LessonTeacher);
+            LessonTeacher = (TextView) view.findViewById(R.id.SubjectNameTitle);
             frameLayout = (FrameLayout) view.findViewById(R.id.frameLayout);
         }
     }
