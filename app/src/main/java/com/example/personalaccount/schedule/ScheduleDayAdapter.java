@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +16,7 @@ public class ScheduleDayAdapter extends RecyclerView.Adapter<ScheduleDayAdapter.
     private final LayoutInflater inflater;
     private final List<ScheduleDay> ScheduleDays;
 
-    ScheduleDayAdapter(Context context, List<ScheduleDay> ScheduleDays){
+    public ScheduleDayAdapter(Context context, List<ScheduleDay> ScheduleDays){
         this.ScheduleDays = ScheduleDays;
         this.inflater = LayoutInflater.from(context);
     }
