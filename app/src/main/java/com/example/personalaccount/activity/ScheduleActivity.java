@@ -30,7 +30,7 @@ public class ScheduleActivity extends AppCompatActivity {
 
         setInitialData();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewResults);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewNotes);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ScheduleDayAdapter ScheduleDayAdapter = new ScheduleDayAdapter(this, ScheduleDays);
 

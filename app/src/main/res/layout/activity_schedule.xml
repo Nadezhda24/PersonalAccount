@@ -69,13 +69,13 @@
                 android:paddingRight="5dp"
                 android:text="Понедельник, 02.03.2021"
                 android:textColor="?attr/actionMenuTextColor"
-                app:layout_constraintBottom_toTopOf="@+id/RecyclerViewResults"
+                app:layout_constraintBottom_toTopOf="@+id/RecyclerViewNotes"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RecyclerViewResults"
+                android:id="@+id/RecyclerViewNotes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />

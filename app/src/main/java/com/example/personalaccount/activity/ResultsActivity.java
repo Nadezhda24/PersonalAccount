@@ -14,7 +14,6 @@ import android.view.View;
 import com.example.personalaccount.R;
 import com.example.personalaccount.results.Result;
 import com.example.personalaccount.results.ResultAdapter;
-import com.example.personalaccount.schedule.ScheduleDay;
 
 
 import java.util.ArrayList;

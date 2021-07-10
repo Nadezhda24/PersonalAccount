@@ -11,8 +11,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.schedule.ScheduleDay;
-import com.example.personalaccount.schedule.ScheduleDayAdapter;
 
 import java.util.List;
 
