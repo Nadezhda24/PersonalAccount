@@ -44,7 +44,7 @@ public class MessageSystemActivity extends AppCompatActivity {
             }
             break;
             case R.id.bottom_menu_notes:{
-                Intent intent = new Intent(MessageSystemActivity.this, NoteActivity.class);
+                Intent intent = new Intent(MessageSystemActivity.this, NoteListActivity.class);
                 startActivity(intent);
             }
             break;

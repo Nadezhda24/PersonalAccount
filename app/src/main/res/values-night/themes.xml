@@ -15,4 +15,7 @@
         <!-- Customize your theme here. -->
     </style>
     <drawable name="logo">@drawable/logoblack</drawable>
+    <drawable name="add_in_schedule">@drawable/add_note_in_schedule_black</drawable>
+    <drawable name="calendar">@drawable/calendar_black</drawable>
+    <drawable name="time">@drawable/time_black</drawable>
 </resources>
