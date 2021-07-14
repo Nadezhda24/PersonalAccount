@@ -15,4 +15,5 @@
         <!-- Customize your theme here. -->
     </style>
     <drawable name="logo">@drawable/logoblack</drawable>
+    <drawable name="schedule_fon">@drawable/schedule_fon_black</drawable>
 </resources>

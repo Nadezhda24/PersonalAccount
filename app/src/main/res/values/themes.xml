@@ -14,4 +14,5 @@
         <!-- Customize your theme here. -->
     </style>
     <drawable name="logo">@drawable/logolight</drawable>
+    <drawable name="schedule_fon">@drawable/schedule_fon_light</drawable>
 </resources>
