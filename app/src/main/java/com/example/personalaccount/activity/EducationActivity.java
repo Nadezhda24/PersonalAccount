@@ -44,7 +44,7 @@ public class EducationActivity extends AppCompatActivity {
             }
             break;
             case R.id.bottom_menu_notes:{
-                Intent intent = new Intent(EducationActivity.this, NoteActivity.class);
+                Intent intent = new Intent(EducationActivity.this, NoteListActivity.class);
                 startActivity(intent);
             }
             break;

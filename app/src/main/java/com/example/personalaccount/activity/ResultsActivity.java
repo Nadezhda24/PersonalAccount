@@ -72,7 +72,7 @@ public class ResultsActivity extends AppCompatActivity {
             }
             break;
             case R.id.bottom_menu_notes:{
-                Intent intent = new Intent(ResultsActivity.this, NoteActivity.class);
+                Intent intent = new Intent(ResultsActivity.this, NoteListActivity.class);
                 startActivity(intent);
             }
             break;

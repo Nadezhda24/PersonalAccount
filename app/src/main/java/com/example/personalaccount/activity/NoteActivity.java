@@ -1,82 +1,95 @@
 package com.example.personalaccount.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.note.Note;
-import com.example.personalaccount.note.NoteAdapter;
-import com.example.personalaccount.results.Result;
 
-import java.util.ArrayList;
+import java.util.Calendar;
 
 public class NoteActivity extends AppCompatActivity {
-    ArrayList<Note> Notes = new ArrayList<Note>();
+
+    TextView currentDateTime;
+    Calendar dateAndTime=Calendar.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
         getSupportActionBar().setTitle("Заметки");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
-
-        setInitialData();
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewNotes);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        NoteAdapter NoteAdapter = new NoteAdapter(this, Notes);
-
-        recyclerView.setAdapter(NoteAdapter);
-
-
+        currentDateTime = (TextView)findViewById(R.id.Data);
+        setInitialDateTime();
     }
 
-    private void setInitialData(){
-        Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
-        Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
-        Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
-        Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
-        Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
-        Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
-        Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
+    // отображаем диалоговое окно для выбора даты
+    public void setDate(View v) {
+        new DatePickerDialog(NoteActivity.this, d,
+                dateAndTime.get(Calendar.YEAR),
+                dateAndTime.get(Calendar.MONTH),
+                dateAndTime.get(Calendar.DAY_OF_MONTH))
+                .show();
+    }
 
+    // отображаем диалоговое окно для выбора времени
+    public void setTime(View v) {
+        new TimePickerDialog(NoteActivity.this, t,
+                dateAndTime.get(Calendar.HOUR_OF_DAY),
+                dateAndTime.get(Calendar.MINUTE), true)
+                .show();
+    }
+
+    // установка начальных даты и времени
+    private void setInitialDateTime() {
+        currentDateTime.setText(DateUtils.formatDateTime(this,
+                dateAndTime.getTimeInMillis(),
+                DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR
+                        | DateUtils.FORMAT_SHOW_TIME));
     }
 
 
+    // установка обработчика выбора времени
+    TimePickerDialog.OnTimeSetListener t=new TimePickerDialog.OnTimeSetListener() {
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            dateAndTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+            dateAndTime.set(Calendar.MINUTE, minute);
+            setInitialDateTime();
+        }
+    };
 
-    public void BottomMenuOnClick(View view) {
+    // установка обработчика выбора даты
+    DatePickerDialog.OnDateSetListener d=new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            dateAndTime.set(Calendar.YEAR, year);
+            dateAndTime.set(Calendar.MONTH, monthOfYear);
+            dateAndTime.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            setInitialDateTime();
+        }
+    };
+
+
+
+    public void OnClick(View view) {
         switch (view.getId()) {
-            case R.id.bottom_menu_schedule: {
-                Intent intent = new Intent(NoteActivity.this, ScheduleActivity.class);
-                startActivity(intent);
+            case R.id.Calendar: {
+                setDate(view);
             }
             break;
-            case R.id.bottom_menu_mark:{
-                Intent intent = new Intent(NoteActivity.this, ResultsActivity.class);
-                startActivity(intent);
-            }
-            break;
-            case R.id.bottom_menu_message:{
-                Intent intent = new Intent(NoteActivity.this, MessageSystemActivity.class);
-                startActivity(intent);
-            }
-            break;
-            case R.id.bottom_menu_education:{
-                Intent intent = new Intent(NoteActivity.this, EducationActivity.class);
-                startActivity(intent);
-            }
-            break;
-            case R.id.bottom_menu_notes:{
-                Intent intent = new Intent(NoteActivity.this, NoteActivity.class);
-                startActivity(intent);
+            case R.id.Time: {
+                setTime(view);
             }
             break;
         }
+
     }
 }

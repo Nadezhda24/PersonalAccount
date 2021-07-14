@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalAccount">
         <activity android:name=".activity.NoteActivity"></activity>
+        <activity android:name=".activity.NoteListActivity" />
         <activity android:name=".activity.EducationActivity" />
         <activity android:name=".activity.MessageSystemActivity" />
         <activity android:name=".activity.ResultsActivity" />
