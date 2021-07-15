@@ -16,78 +16,20 @@
     android:paddingBottom="2dp">
 
     <TextView
-        android:id="@+id/LessonNumder"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center"
-        android:text="1"
-        android:textColor="?attr/actionMenuTextColor"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/LessonStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center"
-        android:text="8:30"
-        android:textColor="?attr/actionMenuTextColor"
-        android:textSize="14sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/LessonEnd"
-        app:layout_constraintEnd_toEndOf="@+id/LessonEnd"
-        app:layout_constraintStart_toStartOf="@+id/LessonEnd" />
-
-    <TextView
-        android:id="@+id/LessonEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center"
-        android:text="10:00"
-        android:textColor="?attr/actionMenuTextColor"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/frameLayout" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="5dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="2dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/LessonEnd"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-    </FrameLayout>
-
-    <TextView
         android:id="@+id/LessonName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Качество и тестирование программного обеспечения"
         android:textColor="?attr/actionMenuTextColor"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/frameLayout"
-        app:layout_constraintTop_toTopOf="@+id/LessonNumder" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/LessonRoom"
@@ -108,11 +50,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="sans-serif-condensed-light"
-        android:text="Лекция"
+        android:text="Экзамен"
         android:textColor="?attr/actionMenuTextColor"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/LessonName"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/LessonTime" />
+
+    <TextView
+        android:id="@+id/LessonTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Время"
+        android:textColor="?attr/actionMenuTextColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/LessonDate"
+        app:layout_constraintStart_toStartOf="@+id/LessonDate"
+        app:layout_constraintTop_toBottomOf="@+id/LessonDate" />
+
+    <TextView
+        android:id="@+id/LessonDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Дата"
+        android:textColor="?attr/actionMenuTextColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/LessonName"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/LessonName" />
 
     <ImageView
@@ -144,11 +115,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Ужаринский А.Ю."
         android:textColor="?attr/actionMenuTextColor"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/LessonEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/LessonRoom"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/LessonRoom" />
@@ -172,5 +144,23 @@
         app:layout_constraintStart_toStartOf="@+id/LessonName"
         app:layout_constraintTop_toTopOf="@+id/LessonType"
         app:srcCompat="@drawable/type_lesson" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="19dp"
+        android:layout_height="16dp"
+        app:layout_constraintStart_toStartOf="@+id/LessonName"
+        app:layout_constraintTop_toTopOf="@+id/LessonDate"
+        app:srcCompat="@drawable/calendar_light" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="19dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/LessonTime"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/LessonTime"
+        app:srcCompat="@drawable/time_light" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

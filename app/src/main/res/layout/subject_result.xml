@@ -16,7 +16,7 @@
     android:paddingBottom="2dp">
 
     <TextView
-        android:id="@+id/SubjectNameTitle"
+        android:id="@+id/LessonTeacher"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -113,7 +113,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/SubjectNameTitle"
-        app:layout_constraintTop_toBottomOf="@+id/SubjectNameTitle" />
+        app:layout_constraintStart_toStartOf="@+id/LessonTeacher"
+        app:layout_constraintTop_toBottomOf="@+id/LessonTeacher" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

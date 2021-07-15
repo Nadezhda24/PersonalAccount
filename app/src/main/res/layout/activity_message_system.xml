@@ -19,12 +19,65 @@
             android:layout_height="match_parent"
             tools:context=".activity.ScheduleActivity">
 
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        app:tabMode="scrollable">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Все" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Личные" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ЛК" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tabItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ЛБ" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tabItem2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ПР" />
+
+                    </com.google.android.material.tabs.TabLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RecyclerViewNotes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

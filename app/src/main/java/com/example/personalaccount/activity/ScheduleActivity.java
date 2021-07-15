@@ -20,6 +20,8 @@ import java.util.ArrayList;
 
 public class ScheduleActivity extends AppCompatActivity {
     ArrayList<ScheduleDay> ScheduleDays = new ArrayList<ScheduleDay>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

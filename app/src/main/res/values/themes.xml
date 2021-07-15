@@ -14,12 +14,9 @@
         <!-- Customize your theme here. -->
     </style>
     <drawable name="logo">@drawable/logolight</drawable>
-<<<<<<< HEAD
     <drawable name="schedule_fon">@drawable/schedule_fon_light</drawable>
-=======
     <drawable name="add_in_schedule">@drawable/add_note_in_schedule_light</drawable>
     <drawable name="calendar">@drawable/calendar_light</drawable>
     <drawable name="time">@drawable/time_light</drawable>
 
->>>>>>> ed73125b364c3e7e2ed1b8f075e3c7e5c0cae5ba
 </resources>

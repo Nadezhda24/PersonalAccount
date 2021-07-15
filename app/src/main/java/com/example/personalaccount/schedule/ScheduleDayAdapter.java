@@ -71,7 +71,7 @@ public class ScheduleDayAdapter extends RecyclerView.Adapter<ScheduleDayAdapter.
             LessonName = (TextView) view.findViewById(R.id.LessonName);
             LessonType = (TextView) view.findViewById(R.id.LessonType);
             LessonRoom = (TextView) view.findViewById(R.id.LessonRoom);
-            LessonTeacher = (TextView) view.findViewById(R.id.SubjectNameTitle);
+            LessonTeacher = (TextView) view.findViewById(R.id.LessonTeacher);
             frameLayout = (FrameLayout) view.findViewById(R.id.frameLayout);
         }
     }
