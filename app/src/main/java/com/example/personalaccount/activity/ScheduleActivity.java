@@ -64,7 +64,7 @@ public class ScheduleActivity extends AppCompatActivity {
             }
             break;
             case R.id.bottom_menu_education:{
-                Intent intent = new Intent(ScheduleActivity.this, EducationActivity.class);
+                Intent intent = new Intent(ScheduleActivity.this, EduSubjectActivity.class);
                 startActivity(intent);
             }
             break;

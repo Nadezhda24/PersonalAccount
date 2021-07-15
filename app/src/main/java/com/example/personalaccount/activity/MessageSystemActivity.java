@@ -39,7 +39,7 @@ public class MessageSystemActivity extends AppCompatActivity {
             }
             break;
             case R.id.bottom_menu_education:{
-                Intent intent = new Intent(MessageSystemActivity.this, EducationActivity.class);
+                Intent intent = new Intent(MessageSystemActivity.this, EduActivity.class);
                 startActivity(intent);
             }
             break;

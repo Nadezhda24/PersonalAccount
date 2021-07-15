@@ -67,7 +67,7 @@ public class ResultsActivity extends AppCompatActivity {
             }
             break;
             case R.id.bottom_menu_education:{
-                Intent intent = new Intent(ResultsActivity.this, EducationActivity.class);
+                Intent intent = new Intent(ResultsActivity.this, EduActivity.class);
                 startActivity(intent);
             }
             break;

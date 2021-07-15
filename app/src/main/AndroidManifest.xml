@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalAccount">
-        <activity android:name=".activity.NoteActivity"></activity>
+        <activity android:name=".activity.EduSubjectActivity"></activity>
+        <activity android:name=".activity.NoteActivity" />
         <activity android:name=".activity.NoteListActivity" />
-        <activity android:name=".activity.EducationActivity" />
+        <activity android:name=".activity.EduActivity" />
         <activity android:name=".activity.MessageSystemActivity" />
         <activity android:name=".activity.ResultsActivity" />
         <activity android:name=".activity.ScheduleActivity" />

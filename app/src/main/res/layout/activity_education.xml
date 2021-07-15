@@ -20,7 +20,7 @@
             tools:context=".activity.ScheduleActivity">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RecyclerViewNotes"
+                android:id="@+id/RecyclerViewEdu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintStart_toStartOf="parent"
