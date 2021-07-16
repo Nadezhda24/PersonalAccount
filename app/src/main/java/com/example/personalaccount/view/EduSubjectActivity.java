@@ -1,4 +1,4 @@
-package com.example.personalaccount.activity;
+package com.example.personalaccount.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,8 +9,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.edu.Edu;
-import com.example.personalaccount.edu.EduSubjectAdapter;
+import com.example.personalaccount.model.Edu;
+import com.example.personalaccount.controller.EduSubjectAdapter;
 
 import java.util.ArrayList;
 

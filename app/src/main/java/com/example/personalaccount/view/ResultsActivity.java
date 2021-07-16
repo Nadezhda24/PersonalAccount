@@ -1,4 +1,4 @@
-package com.example.personalaccount.activity;
+package com.example.personalaccount.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,8 +12,8 @@ import android.text.Html;
 import android.view.View;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.results.Result;
-import com.example.personalaccount.results.ResultAdapter;
+import com.example.personalaccount.model.Result;
+import com.example.personalaccount.controller.ResultAdapter;
 
 
 import java.util.ArrayList;

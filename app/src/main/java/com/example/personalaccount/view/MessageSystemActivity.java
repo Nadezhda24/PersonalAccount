@@ -1,4 +1,4 @@
-package com.example.personalaccount.activity;
+package com.example.personalaccount.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,8 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.message.Chat;
-import com.example.personalaccount.message.ChatAdapter;
+import com.example.personalaccount.model.Chat;
+import com.example.personalaccount.controller.ChatAdapter;
 
 import java.util.ArrayList;
 

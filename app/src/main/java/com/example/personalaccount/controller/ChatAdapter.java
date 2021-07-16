@@ -1,4 +1,4 @@
-package com.example.personalaccount.message;
+package com.example.personalaccount.controller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.personalaccount.R;
+import com.example.personalaccount.model.Chat;
+
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {

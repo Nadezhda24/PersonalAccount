@@ -1,4 +1,4 @@
-package com.example.personalaccount.note;
+package com.example.personalaccount.model;
 
 public class Note {
 

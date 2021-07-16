@@ -1,4 +1,4 @@
-package com.example.personalaccount.message;
+package com.example.personalaccount.model;
 
 public class Chat {
 

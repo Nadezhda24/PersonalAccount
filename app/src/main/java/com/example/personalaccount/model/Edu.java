@@ -1,4 +1,4 @@
-package com.example.personalaccount.edu;
+package com.example.personalaccount.model;
 
 public class Edu {
 

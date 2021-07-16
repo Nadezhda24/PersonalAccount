@@ -1,4 +1,4 @@
-package com.example.personalaccount.schedule;
+package com.example.personalaccount.model;
 
 public class ScheduleExam {
 

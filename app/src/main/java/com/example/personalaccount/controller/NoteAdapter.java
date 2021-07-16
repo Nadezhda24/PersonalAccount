@@ -1,4 +1,4 @@
-package com.example.personalaccount.note;
+package com.example.personalaccount.controller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.personalaccount.R;
+import com.example.personalaccount.model.Note;
 
 import java.util.List;
 

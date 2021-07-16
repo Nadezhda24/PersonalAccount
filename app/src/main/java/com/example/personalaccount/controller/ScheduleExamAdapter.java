@@ -1,4 +1,4 @@
-package com.example.personalaccount.schedule;
+package com.example.personalaccount.controller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccount.R;
+import com.example.personalaccount.model.ScheduleExam;
 
 import java.util.List;
 

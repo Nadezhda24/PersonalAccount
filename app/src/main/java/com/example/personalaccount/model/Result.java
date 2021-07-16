@@ -1,4 +1,4 @@
-package com.example.personalaccount.results;
+package com.example.personalaccount.model;
 
 public class Result {
 

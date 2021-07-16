@@ -1,4 +1,4 @@
-package com.example.personalaccount.activity;
+package com.example.personalaccount.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,8 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.schedule.ScheduleDay;
-import com.example.personalaccount.schedule.ScheduleDayAdapter;
+import com.example.personalaccount.model.ScheduleDay;
+import com.example.personalaccount.controller.ScheduleDayAdapter;
 
 import java.util.ArrayList;
 

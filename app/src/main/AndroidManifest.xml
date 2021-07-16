@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalAccount">
-        <activity android:name=".activity.ChatActivity"></activity>
-        <activity android:name=".activity.EduSubjectActivity" />
-        <activity android:name=".activity.NoteActivity" />
-        <activity android:name=".activity.NoteListActivity" />
-        <activity android:name=".activity.EduActivity" />
-        <activity android:name=".activity.MessageSystemActivity" />
-        <activity android:name=".activity.ResultsActivity" />
-        <activity android:name=".activity.ScheduleActivity" />
-        <activity android:name=".activity.AuthActivity">
+        <activity android:name=".view.ChatActivity"></activity>
+        <activity android:name=".view.EduSubjectActivity" />
+        <activity android:name=".view.NoteActivity" />
+        <activity android:name=".view.NoteListActivity" />
+        <activity android:name=".view.EduActivity" />
+        <activity android:name=".view.MessageSystemActivity" />
+        <activity android:name=".view.ResultsActivity" />
+        <activity android:name=".view.ScheduleActivity" />
+        <activity android:name=".view.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
