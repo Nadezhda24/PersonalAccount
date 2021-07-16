@@ -72,7 +72,7 @@
             </HorizontalScrollView>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RecyclerViewNotes"
+                android:id="@+id/RecyclerViewChats"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"

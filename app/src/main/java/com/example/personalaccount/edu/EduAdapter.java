@@ -11,8 +11,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.note.Note;
-
 import java.util.List;
 
 public class EduAdapter extends RecyclerView.Adapter<EduAdapter.ViewHolder> {

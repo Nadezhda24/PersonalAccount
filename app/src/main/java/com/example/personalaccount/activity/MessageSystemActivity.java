@@ -1,6 +1,8 @@
 package com.example.personalaccount.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,9 +11,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.personalaccount.R;
+import com.example.personalaccount.message.Chat;
+import com.example.personalaccount.message.ChatAdapter;
+
+import java.util.ArrayList;
 
 public class MessageSystemActivity extends AppCompatActivity {
-
+    ArrayList<Chat> Chats = new ArrayList<Chat>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +25,32 @@ public class MessageSystemActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Система сообщений");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
+
+        setInitialData();
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewChats);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        ChatAdapter  ChatAdapter = new ChatAdapter(this,Chats );
+
+        recyclerView.setAdapter(ChatAdapter);
+
+    }
+
+    private void setInitialData(){
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
     }
 
     public void BottomMenuOnClick(View view) {
