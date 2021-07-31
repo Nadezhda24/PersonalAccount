@@ -6,4 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".view.ChatActivity">
 
+    <EditText
+        android:id="@+id/NewMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="Сообщение"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/SendMessage"
+        app:layout_constraintStart_toEndOf="@+id/AddFile" />
+
+    <ImageView
+        android:id="@+id/AddFile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/document"
+        app:layout_constraintBottom_toBottomOf="@+id/NewMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/NewMessage" />
+
+    <ImageView
+        android:id="@+id/SendMessage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/send"
+        app:layout_constraintBottom_toBottomOf="@+id/NewMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/NewMessage" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewMessages"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/NewMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

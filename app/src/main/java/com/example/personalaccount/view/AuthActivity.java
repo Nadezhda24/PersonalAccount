@@ -21,7 +21,7 @@ public class AuthActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        Intent intent = new Intent(AuthActivity.this, ScheduleActivity.class);
+        Intent intent = new Intent(AuthActivity.this, ScheduleTabbedActivity.class);
         startActivity(intent);
     }
 }

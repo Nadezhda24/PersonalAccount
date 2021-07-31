@@ -56,7 +56,7 @@ public class MessageSystemActivity extends AppCompatActivity {
     public void BottomMenuOnClick(View view) {
         switch (view.getId()) {
             case R.id.bottom_menu_schedule: {
-                Intent intent = new Intent(MessageSystemActivity.this, ScheduleActivity.class);
+                Intent intent = new Intent(MessageSystemActivity.this, ScheduleTabbedActivity.class);
                 startActivity(intent);
             }
             break;

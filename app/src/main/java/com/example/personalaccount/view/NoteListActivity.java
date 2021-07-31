@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.personalaccount.R;
@@ -52,7 +53,7 @@ public class NoteListActivity extends AppCompatActivity {
     public void BottomMenuOnClick(View view) {
         switch (view.getId()) {
             case R.id.bottom_menu_schedule: {
-                Intent intent = new Intent(NoteListActivity.this, ScheduleActivity.class);
+                Intent intent = new Intent(NoteListActivity.this, ScheduleTabbedActivity.class);
                 startActivity(intent);
             }
             break;
@@ -81,5 +82,8 @@ public class NoteListActivity extends AppCompatActivity {
 
     public void onClick(View view) {
 
+    }
+
+    public void BottomMenuOnClick(MenuItem item) {
     }
 }

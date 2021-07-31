@@ -52,7 +52,7 @@ public class ResultsActivity extends AppCompatActivity {
     public void BottomMenuOnClick(View view) {
         switch (view.getId()) {
             case R.id.bottom_menu_schedule: {
-                Intent intent = new Intent(ResultsActivity.this, ScheduleActivity.class);
+                Intent intent = new Intent(ResultsActivity.this, ScheduleTabbedActivity.class);
                 startActivity(intent);
             }
             break;

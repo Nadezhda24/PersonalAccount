@@ -13,11 +13,21 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
     <drawable name="logo">@drawable/logolight</drawable>
     <drawable name="schedule_fon">@drawable/schedule_fon_light</drawable>
     <drawable name="table_fon">@drawable/table_light</drawable>
     <drawable name="add_in_schedule">@drawable/add_note_in_schedule_light</drawable>
     <drawable name="calendar">@drawable/calendar_light</drawable>
     <drawable name="time">@drawable/time_light</drawable>
+
+    <style name="Theme.PersonalAccount.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.PersonalAccount.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.PersonalAccount.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
