@@ -50,7 +50,7 @@ public class ScheduleTabbedActivity extends AppCompatActivity {
     }
 
 
-    public void BottomMenuOnClick(MenuItem item) {
+    /* public void BottomMenuOnClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.bottom_menu_schedule: {
                 Intent intent = new Intent(this, ScheduleTabbedActivity.class);
@@ -78,5 +78,5 @@ public class ScheduleTabbedActivity extends AppCompatActivity {
             }
             break;
         }
-    }
+    }*/
 }

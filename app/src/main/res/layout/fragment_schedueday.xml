@@ -91,14 +91,5 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@color/Menu"
-        android:onClick="BottomMenuOnClick"
-        app:menu="@menu/bottom_navigation_menu" />
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

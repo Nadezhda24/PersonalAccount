@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_schedule"
+        android:icon="@drawable/bottom_menu_schedule"
+        android:title="@string/title_schedule" />
+    <item
+        android:id="@+id/navigation_result"
+        android:icon="@drawable/bottom_menu_mark"
+        android:title="@string/title_result" />
+    <item
+        android:id="@+id/navigation_messager"
+        android:icon="@drawable/bottom_menu_message"
+        android:title="@string/title_messager" />
+    <item
+        android:id="@+id/navigation_edu"
+        android:icon="@drawable/bottom_menu_education"
+        android:title="@string/title_edu" />
+    <item
+        android:id="@+id/navigation_note"
+        android:icon="@drawable/bottom_menu_notes"
+        android:title="@string/title_note" />
+</menu>
+

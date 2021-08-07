@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalAccount">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.ScheduleTabbedActivity"
             android:exported="true"
             android:label="@string/title_activity_schedule_tabbed"

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.personalaccount.R;
@@ -57,33 +58,33 @@ public class EduActivity extends AppCompatActivity {
         EduSubjects.add(new Edu("Функциональное и логическое программирование") );
     }
 
-    public void BottomMenuOnClick(View view) {
-        switch (view.getId()) {
+   /* public void BottomMenuOnClick(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.bottom_menu_schedule: {
-                Intent intent = new Intent(EduActivity.this, ScheduleTabbedActivity.class);
+                Intent intent = new Intent(this, ScheduleTabbedActivity.class);
                 startActivity(intent);
             }
             break;
             case R.id.bottom_menu_mark:{
-                Intent intent = new Intent(EduActivity.this, ResultsActivity.class);
+                Intent intent = new Intent(this, ResultsActivity.class);
                 startActivity(intent);
             }
             break;
             case R.id.bottom_menu_message:{
-                Intent intent = new Intent(EduActivity.this, MessageSystemActivity.class);
+                Intent intent = new Intent(this, MessageSystemActivity.class);
                 startActivity(intent);
             }
             break;
             case R.id.bottom_menu_education:{
-                Intent intent = new Intent(EduActivity.this, EduActivity.class);
+                Intent intent = new Intent(this, EduActivity.class);
                 startActivity(intent);
             }
             break;
             case R.id.bottom_menu_notes:{
-                Intent intent = new Intent(EduActivity.this, NoteListActivity.class);
+                Intent intent = new Intent(this, NoteListActivity.class);
                 startActivity(intent);
             }
             break;
         }
-    }
+    }*/
 }

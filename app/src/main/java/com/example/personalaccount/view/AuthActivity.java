@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.personalaccount.MainActivity;
 import com.example.personalaccount.R;
 
 
@@ -21,7 +22,7 @@ public class AuthActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        Intent intent = new Intent(AuthActivity.this, ScheduleTabbedActivity.class);
+        Intent intent = new Intent(AuthActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }

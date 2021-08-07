@@ -50,40 +50,38 @@ public class NoteListActivity extends AppCompatActivity {
 
 
 
-    public void BottomMenuOnClick(View view) {
-        switch (view.getId()) {
-            case R.id.bottom_menu_schedule: {
-                Intent intent = new Intent(NoteListActivity.this, ScheduleTabbedActivity.class);
-                startActivity(intent);
-            }
-            break;
-            case R.id.bottom_menu_mark:{
-                Intent intent = new Intent(NoteListActivity.this, ResultsActivity.class);
-                startActivity(intent);
-            }
-            break;
-            case R.id.bottom_menu_message:{
-                Intent intent = new Intent(NoteListActivity.this, MessageSystemActivity.class);
-                startActivity(intent);
-            }
-            break;
-            case R.id.bottom_menu_education:{
-                Intent intent = new Intent(NoteListActivity.this, EduActivity.class);
-                startActivity(intent);
-            }
-            break;
-            case R.id.bottom_menu_notes:{
-                Intent intent = new Intent(NoteListActivity.this, NoteListActivity.class);
-                startActivity(intent);
-            }
-            break;
-        }
-    }
 
     public void onClick(View view) {
 
     }
 
-    public void BottomMenuOnClick(MenuItem item) {
-    }
+     /* public void BottomMenuOnClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.bottom_menu_schedule: {
+                Intent intent = new Intent(this, ScheduleTabbedActivity.class);
+                startActivity(intent);
+            }
+            break;
+            case R.id.bottom_menu_mark:{
+                Intent intent = new Intent(this, ResultsActivity.class);
+                startActivity(intent);
+            }
+            break;
+            case R.id.bottom_menu_message:{
+                Intent intent = new Intent(this, MessageSystemActivity.class);
+                startActivity(intent);
+            }
+            break;
+            case R.id.bottom_menu_education:{
+                Intent intent = new Intent(this, EduActivity.class);
+                startActivity(intent);
+            }
+            break;
+            case R.id.bottom_menu_notes:{
+                Intent intent = new Intent(this, NoteListActivity.class);
+                startActivity(intent);
+            }
+            break;
+        }
+    }*/
 }

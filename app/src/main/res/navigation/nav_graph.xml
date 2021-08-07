@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_schedule">
+
+    <fragment
+        android:id="@+id/navigation_schedule"
+        android:name="com.example.personalaccount.ScheduleFragment"
+        android:label="@string/title_schedule"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/navigation_result"
+        android:name="com.example.personalaccount.ResultFragment"
+        android:label="@string/title_result"
+        tools:layout="@layout/fragment_result" />
+
+    <fragment
+        android:id="@+id/navigation_messager"
+        android:name="com.example.personalaccount.SystemMessageFragment"
+        android:label="@string/title_messager"
+        tools:layout="@layout/fragment_system_message" />
+
+    <fragment
+        android:id="@+id/navigation_edu"
+        android:name="com.example.personalaccount.EduFragment"
+        android:label="@string/title_edu"
+        tools:layout="@layout/fragment_edu" />
+    <fragment
+        android:id="@+id/navigation_note"
+        android:name="com.example.personalaccount.NoteListFragment"
+        android:label="@string/title_note"
+        tools:layout="@layout/fragment_note_list" />
+
+</navigation>
