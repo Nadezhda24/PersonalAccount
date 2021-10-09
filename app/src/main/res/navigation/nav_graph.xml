@@ -7,30 +7,30 @@
 
     <fragment
         android:id="@+id/navigation_schedule"
-        android:name="com.example.personalaccount.ScheduleFragment"
+        android:name="com.example.personalaccount.view.ScheduleFragment"
         android:label="@string/title_schedule"
         tools:layout="@layout/fragment_schedule" />
 
     <fragment
         android:id="@+id/navigation_result"
-        android:name="com.example.personalaccount.ResultFragment"
+        android:name="com.example.personalaccount.view.ResultFragment"
         android:label="@string/title_result"
         tools:layout="@layout/fragment_result" />
 
     <fragment
         android:id="@+id/navigation_messager"
-        android:name="com.example.personalaccount.SystemMessageFragment"
+        android:name="com.example.personalaccount.view.SystemMessageFragment"
         android:label="@string/title_messager"
         tools:layout="@layout/fragment_system_message" />
 
     <fragment
         android:id="@+id/navigation_edu"
-        android:name="com.example.personalaccount.EduFragment"
+        android:name="com.example.personalaccount.view.EduFragment"
         android:label="@string/title_edu"
         tools:layout="@layout/fragment_edu" />
     <fragment
         android:id="@+id/navigation_note"
-        android:name="com.example.personalaccount.NoteListFragment"
+        android:name="com.example.personalaccount.view.NoteListFragment"
         android:label="@string/title_note"
         tools:layout="@layout/fragment_note_list" />
 

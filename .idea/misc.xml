@@ -9,13 +9,15 @@
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_education.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_message_system.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_new_note.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_note.xml" value="0.1421875" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_note_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_results.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_schedule.xml" value="0.264" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_schedule_tabbed.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/chat.xml" value="0.21331521739130435" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/edu_score_subject.xml" value="0.1" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/edu_subject.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/edu_subject.xml" value="0.6" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_1.xml" value="0.1" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_edu.xml" value="0.2838541666666667" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_note_list.xml" value="0.176" />
@@ -25,9 +27,12 @@
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_schedueweek.xml" value="0.264" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_schedule.xml" value="0.25245098039215685" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_schedule_tabbed.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_system_message.xml" value="0.1" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/message.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_system_message.xml" value="0.16" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/message.xml" value="0.536" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/message_outgoing.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/note.xml" value="0.24094202898550723" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/schedule_day.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/schedule_exam.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/subject_result.xml" value="0.4" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.20208333333333334" />

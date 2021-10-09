@@ -10,21 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalAccount">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true" />
         <activity
             android:name=".view.ScheduleTabbedActivity"
             android:exported="true"
             android:label="@string/title_activity_schedule_tabbed"
             android:theme="@style/Theme.PersonalAccount.NoActionBar" />
-        <activity android:name=".view.NoteActivity" />
         <activity android:name=".view.ChatActivity" />
         <activity android:name=".view.EduSubjectActivity" />
         <activity android:name=".view.NewNoteActivity" />
-        <activity android:name=".view.NoteListActivity" />
-        <activity android:name=".view.EduActivity" />
-        <activity android:name=".view.MessageSystemActivity" />
-        <activity android:name=".view.ResultsActivity" />
         <activity android:name=".view.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
