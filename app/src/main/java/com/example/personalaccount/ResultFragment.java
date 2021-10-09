@@ -1,12 +1,22 @@
 package com.example.personalaccount;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.personalaccount.model.Result;
+import com.example.personalaccount.controller.ResultAdapter;
+
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +33,8 @@ public class ResultFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    ArrayList<Result> Results = new ArrayList<Result>();
 
     public ResultFragment() {
         // Required empty public constructor
@@ -55,10 +67,34 @@ public class ResultFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_result, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_result, container, false);
+
+        setInitialData();
+
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewResults);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        ResultAdapter ResultAdapter = new ResultAdapter(getActivity(), Results);
+
+        recyclerView.setAdapter(ResultAdapter);
+        return view;
+
+    }
+
+
+    private void setInitialData(){
+        Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
+        Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
+        Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
+        Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
+        Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
+        Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
+        Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
+        Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
+
     }
 }
