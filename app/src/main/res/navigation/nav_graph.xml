@@ -25,9 +25,9 @@
 
     <fragment
         android:id="@+id/navigation_edu"
-        android:name="com.example.personalaccount.view.EduFragment"
+        android:name="com.example.personalaccount.view.GraduationWorkFragment"
         android:label="@string/title_edu"
-        tools:layout="@layout/fragment_edu" />
+        tools:layout="@layout/fragment_graduation_work"/>
     <fragment
         android:id="@+id/navigation_note"
         android:name="com.example.personalaccount.view.NoteListFragment"

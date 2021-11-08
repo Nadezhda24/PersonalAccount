@@ -1,5 +1,6 @@
 package com.example.personalaccount.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -79,6 +80,9 @@ public class SystemMessageFragment extends Fragment {
             public void onChatClick(Chat chat, int position) {
                 Toast.makeText(getActivity(), "Был выбран пункт " + chat.GetChatTitle(),
                         Toast.LENGTH_SHORT).show();
+
+                Intent intent=new Intent(getContext(),ChatActivity.class);
+                startActivity(intent);
             }
         } ;
 

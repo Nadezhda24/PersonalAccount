@@ -41,7 +41,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
     @SuppressLint("ResourceAsColor")
     @Override
-    public void onBindViewHolder(ChatAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ChatAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Chat Chat = Chats.get(position);
         holder.ChatTitle.setText(Chat.GetChatTitle());
         holder.ChatText.setText(Chat.GetChatText());
