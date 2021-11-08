@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.ChatAdapter;
@@ -72,8 +73,17 @@ public class SystemMessageFragment extends Fragment {
         setInitialData();
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewChats);
+
+        ChatAdapter.OnChatClickListener chatClickListener = new ChatAdapter.OnChatClickListener() {
+            @Override
+            public void onChatClick(Chat chat, int position) {
+                Toast.makeText(getActivity(), "Был выбран пункт " + chat.GetChatTitle(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        } ;
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ChatAdapter  ChatAdapter = new ChatAdapter(getActivity(),Chats );
+        ChatAdapter  ChatAdapter = new ChatAdapter(getActivity(),Chats, chatClickListener);
 
         recyclerView.setAdapter(ChatAdapter);
 

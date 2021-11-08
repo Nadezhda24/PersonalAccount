@@ -17,10 +17,18 @@ import com.example.personalaccount.model.Chat;
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
+
+    public interface OnChatClickListener{
+        void onChatClick(Chat chat, int position);
+    }
+
+    private final OnChatClickListener onClickListener;
+
     private final LayoutInflater inflater;
     private final List<Chat> Chats;
 
-    public ChatAdapter(Context context, List<Chat> Chats){
+    public ChatAdapter(Context context, List<Chat> Chats, OnChatClickListener onClickListener){
+        this.onClickListener = onClickListener;
         this.Chats = Chats;
         this.inflater = LayoutInflater.from(context);
     }
@@ -38,12 +46,21 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         holder.ChatTitle.setText(Chat.GetChatTitle());
         holder.ChatText.setText(Chat.GetChatText());
         holder.ChatCountUnread.setText(Chat.GetChatCountUnread());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickListener.onChatClick(Chat, position);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return Chats.size();
     }
+
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
