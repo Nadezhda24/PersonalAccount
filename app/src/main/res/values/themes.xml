@@ -20,6 +20,7 @@
     <drawable name="add_in_schedule">@drawable/add_note_in_schedule_light</drawable>
     <drawable name="calendar">@drawable/calendar_light</drawable>
     <drawable name="time">@drawable/time_light</drawable>
+    <drawable name="history">@drawable/code</drawable>
 
     <style name="Theme.PersonalAccount.NoActionBar">
         <item name="windowActionBar">false</item>

@@ -18,7 +18,14 @@ import com.example.personalaccount.controller.TaskAdapter;
 import com.example.personalaccount.model.Chat;
 import com.example.personalaccount.model.Task;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
+
+import javax.net.ssl.HttpsURLConnection;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +35,9 @@ import java.util.ArrayList;
 public class GraduationWorkFragment extends Fragment {
 
     ArrayList<Task> Tasks = new ArrayList<Task>();
+    BufferedReader reader=null;
+    InputStream stream = null;
+    HttpsURLConnection connection = null;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -82,6 +92,10 @@ public class GraduationWorkFragment extends Fragment {
         TaskAdapter.OnTaskClickListener taskClickListener = new TaskAdapter.OnTaskClickListener() {
             @Override
             public void onTaskClick(Task task, int position) {
+
+                Intent intent=new Intent(getContext(),GraduationWorkHistory.class);
+                startActivity(intent);
+
                 Toast.makeText(getActivity(), "Был выбран пункт " + task.GetTaskTopic(),
                         Toast.LENGTH_SHORT).show();
             }
@@ -96,6 +110,7 @@ public class GraduationWorkFragment extends Fragment {
     }
 
     private void setInitialData(){
+
         for (int i=1; i<10; i++){
             Tasks.add(new Task("Новая задача" + Integer. toString(i), "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "Поставлена"));
         }
