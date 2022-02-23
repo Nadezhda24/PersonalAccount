@@ -17,24 +17,133 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/Commit"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="390dp"
-            android:layout_marginBottom="2dp"
-            app:srcCompat="@drawable/history" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/Status"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="2dp"
+                    android:layout_height="5dp"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary">
+
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="25dp"
+                    android:layout_height="15dp"
+                    tools:srcCompat="@drawable/history" />
+
+                <FrameLayout
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary">
+
+                </FrameLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Статус"
-            android:textColor="?attr/actionMenuTextColor" />
+            android:background="@drawable/schedule_fon">
+
+            <FrameLayout
+                android:id="@+id/frameLayout2"
+                android:layout_width="10dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/Task"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Задача"
+                android:textColor="?attr/actionMenuTextColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/frameLayout2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/From"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="c"
+                android:textColor="?attr/actionMenuTextColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/frameLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/Task" />
+
+            <TextView
+                android:id="@+id/StatusType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text=""
+                android:textColor="?attr/actionMenuTextColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Task"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/StatusDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:textColor="?attr/actionMenuTextColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/StatusType"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/From"
+                app:layout_constraintTop_toTopOf="@+id/From" />
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/file"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/StatusDate"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/From"
+                app:layout_constraintTop_toBottomOf="@+id/StatusDate" />
+
+            <include
+                layout="@layout/comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/include"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/include"
+                app:layout_constraintTop_toBottomOf="@+id/include"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
 

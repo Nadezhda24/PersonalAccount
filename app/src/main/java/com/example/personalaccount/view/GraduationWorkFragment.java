@@ -1,12 +1,14 @@
 package com.example.personalaccount.view;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.JsonReader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +16,23 @@ import android.widget.Toast;
 
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.ChatAdapter;
+import com.example.personalaccount.controller.HTTPHandler;
 import com.example.personalaccount.controller.TaskAdapter;
 import com.example.personalaccount.model.Chat;
 import com.example.personalaccount.model.Task;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -111,9 +120,48 @@ public class GraduationWorkFragment extends Fragment {
 
     private void setInitialData(){
 
-        for (int i=1; i<10; i++){
-            Tasks.add(new Task("Новая задача" + Integer. toString(i), "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "Поставлена"));
-        }
+       Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "Поставлена"));
+
+     /*   String url = "http://api/api/task/1";
+        ArrayList<HashMap<String,String>> TaskList = null;
+
+        HTTPHandler sh = new HTTPHandler();
+        String Json =   sh.getData(url);
+        System.out.println("Response " + Json);
+        if(Json != null){
+            try{
+                JSONObject jsonObject = new JSONObject(Json);
+                JSONArray tasks = jsonObject.getJSONArray("tasks");
+                for (int i = 0; i < tasks.length(); i++){
+                    JSONObject task = tasks.getJSONObject(i);
+
+                    String id = task.getString("id");
+                    String topic = task.getString("topic");
+                    String date_completion = task.getString("date_completion");
+                    String content = task.getString("content");
+                    String id_work = task.getString("id_work");
+
+                    HashMap<String,String> t = new HashMap<>();
+                    t.put("id", id);
+                    t.put("topic", topic );
+                    t.put("date_completion", date_completion);
+                    t.put("content", content);
+                    t.put("id_work", id_work);
+
+                    TaskList.add(t);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else{
+            System.out.println("Can't get json from server");
+        } */
+
+       for (int i =0; i < 10; i++){
+            Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "Поставлена"));
         }
 
+
+
+    }
 }
