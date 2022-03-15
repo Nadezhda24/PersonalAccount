@@ -54,6 +54,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
 
         final TextView StatusType, StatusDate,StatusComment,StatusFile;
         final FrameLayout frameLayout;
+
         ViewHolder(View view){
             super(view);
             StatusType = (TextView) view.findViewById(R.id.StatusType);

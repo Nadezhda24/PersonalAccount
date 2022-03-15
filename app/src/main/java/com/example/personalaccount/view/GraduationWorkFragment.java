@@ -119,49 +119,11 @@ public class GraduationWorkFragment extends Fragment {
     }
 
     private void setInitialData(){
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
 
-       Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "Поставлена"));
-
-     /*   String url = "http://api/api/task/1";
-        ArrayList<HashMap<String,String>> TaskList = null;
-
-        HTTPHandler sh = new HTTPHandler();
-        String Json =   sh.getData(url);
-        System.out.println("Response " + Json);
-        if(Json != null){
-            try{
-                JSONObject jsonObject = new JSONObject(Json);
-                JSONArray tasks = jsonObject.getJSONArray("tasks");
-                for (int i = 0; i < tasks.length(); i++){
-                    JSONObject task = tasks.getJSONObject(i);
-
-                    String id = task.getString("id");
-                    String topic = task.getString("topic");
-                    String date_completion = task.getString("date_completion");
-                    String content = task.getString("content");
-                    String id_work = task.getString("id_work");
-
-                    HashMap<String,String> t = new HashMap<>();
-                    t.put("id", id);
-                    t.put("topic", topic );
-                    t.put("date_completion", date_completion);
-                    t.put("content", content);
-                    t.put("id_work", id_work);
-
-                    TaskList.add(t);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }else{
-            System.out.println("Can't get json from server");
-        } */
-
-       for (int i =0; i < 10; i++){
-            Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "Поставлена"));
+        for (int i =0; i < 10; i++){
+            Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
         }
-
-
 
     }
 }

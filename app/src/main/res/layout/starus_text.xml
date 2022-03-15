@@ -17,9 +17,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="5dp">
+        android:orientation="horizontal">
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -74,76 +72,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:fontFamily="sans-serif-condensed-light"
-                android:text="Задача"
-                android:textColor="?attr/actionMenuTextColor"
-                android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/frameLayout2"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/From"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:fontFamily="sans-serif-condensed-light"
-                android:text="c"
-                android:textColor="?attr/actionMenuTextColor"
-                android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/frameLayout2"
-                app:layout_constraintTop_toBottomOf="@+id/Task" />
-
-            <TextView
-                android:id="@+id/StatusType"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
+                android:layout_marginBottom="4dp"
                 android:fontFamily="sans-serif-condensed-light"
-                android:text=""
+                android:text=" "
                 android:textColor="?attr/actionMenuTextColor"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/Task"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/StatusDate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="sans-serif-condensed-light"
-                android:textColor="?attr/actionMenuTextColor"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/StatusType"
-                app:layout_constraintStart_toEndOf="@+id/From"
-                app:layout_constraintTop_toBottomOf="@+id/StatusType" />
-
-            <include
-                android:id="@+id/include"
-                layout="@layout/file"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginEnd="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/frameLayout2"
-                app:layout_constraintTop_toBottomOf="@+id/StatusDate" />
-
-            <include
-                layout="@layout/comment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="7dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/include"
-                app:layout_constraintTop_toBottomOf="@+id/include"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toEndOf="@+id/frameLayout2"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

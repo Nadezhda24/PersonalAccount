@@ -41,10 +41,10 @@ public class GraduationWorkHistory extends AppCompatActivity {
 
     private void setInitialData(){
 
-        Statuses.add(new Status("sdsd" , "12/12/12", "", ""));
+        Statuses.add(new Status("sdsd" , "12/12/12", "", "в исполнении"));
 
         for (int i =0; i < 10; i++){
-            Statuses.add(new Status("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "Поставлена"));
+            Statuses.add(new Status("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполнении"));
         }
 
 
