@@ -53,7 +53,12 @@
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task4.xml" value="0.25" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task5.xml" value="0.25" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task6.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_button.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_comment.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file.xml" value="0.16041666666666668" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file_button.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file_comment.xml" value="0.12132725430597771" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file_comment_button.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.20208333333333334" />
       </map>

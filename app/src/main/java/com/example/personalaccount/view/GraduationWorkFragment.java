@@ -1,38 +1,25 @@
 package com.example.personalaccount.view;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.JsonReader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.controller.ChatAdapter;
-import com.example.personalaccount.controller.HTTPHandler;
-import com.example.personalaccount.controller.TaskAdapter;
-import com.example.personalaccount.model.Chat;
+import com.example.personalaccount.controller.TaskEmployeeAdapter;
+import com.example.personalaccount.controller.TaskStudentAdapter;
 import com.example.personalaccount.model.Task;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -97,33 +84,55 @@ public class GraduationWorkFragment extends Fragment {
         setInitialData();
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewGraduationWork);
+        int UserType = 1;
+        if (UserType == 0){
+            TaskStudentAdapter.OnTaskClickListener taskClickListener = new TaskStudentAdapter.OnTaskClickListener() {
+                @Override
+                public void onTaskClick(Task task, int position) {
 
-        TaskAdapter.OnTaskClickListener taskClickListener = new TaskAdapter.OnTaskClickListener() {
-            @Override
-            public void onTaskClick(Task task, int position) {
+                    Intent intent=new Intent(getContext(),GraduationWorkHistory.class);
+                    startActivity(intent);
 
-                Intent intent=new Intent(getContext(),GraduationWorkHistory.class);
-                startActivity(intent);
+                    Toast.makeText(getActivity(), "Был выбран пункт " + task.GetTaskTopic(),
+                            Toast.LENGTH_SHORT).show();
+                }
+            };
 
-                Toast.makeText(getActivity(), "Был выбран пункт " + task.GetTaskTopic(),
-                        Toast.LENGTH_SHORT).show();
-            }
-        };
+            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            TaskStudentAdapter TaskAdapter = new TaskStudentAdapter(getActivity(),Tasks, taskClickListener);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        TaskAdapter  TaskAdapter = new TaskAdapter(getActivity(),Tasks, taskClickListener);
+            recyclerView.setAdapter(TaskAdapter);
+        }else {
+            TaskEmployeeAdapter.OnTaskClickListener taskClickListener = new TaskEmployeeAdapter.OnTaskClickListener() {
+                @Override
+                public void onTaskClick(Task task, int position) {
 
-        recyclerView.setAdapter(TaskAdapter);
+                    Intent intent=new Intent(getContext(),GraduationWorkHistory.class);
+                    startActivity(intent);
+
+                    Toast.makeText(getActivity(), "Был выбран пункт " + task.GetTaskTopic(),
+                            Toast.LENGTH_SHORT).show();
+                }
+            };
+
+            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            TaskEmployeeAdapter TaskAdapter = new TaskEmployeeAdapter(getActivity(),Tasks, taskClickListener);
+
+            recyclerView.setAdapter(TaskAdapter);
+        }
+
 
         return view;
     }
 
     private void setInitialData(){
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
 
-        for (int i =0; i < 10; i++){
-            Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
-        }
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на проверку"));
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "на проверке"));
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на доработку"));
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));
 
     }
 }
