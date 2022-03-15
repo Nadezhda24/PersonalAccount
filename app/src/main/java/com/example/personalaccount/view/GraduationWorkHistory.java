@@ -4,14 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.personalaccount.R;
-import com.example.personalaccount.controller.EduSubjectAdapter;
 import com.example.personalaccount.controller.StatusAdapter;
 import com.example.personalaccount.model.Status;
 
