@@ -84,7 +84,8 @@ public class GraduationWorkFragment extends Fragment {
         setInitialData();
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewGraduationWork);
-        int UserType = 1;
+        int UserType = 0;
+
         if (UserType == 0){
             TaskStudentAdapter.OnTaskClickListener taskClickListener = new TaskStudentAdapter.OnTaskClickListener() {
                 @Override
@@ -114,10 +115,8 @@ public class GraduationWorkFragment extends Fragment {
                             Toast.LENGTH_SHORT).show();
                 }
             };
-
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             TaskEmployeeAdapter TaskAdapter = new TaskEmployeeAdapter(getActivity(),Tasks, taskClickListener);
-
             recyclerView.setAdapter(TaskAdapter);
         }
 

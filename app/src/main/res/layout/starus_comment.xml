@@ -68,7 +68,7 @@
             </FrameLayout>
 
             <TextView
-                android:id="@+id/Task"
+                android:id="@+id/Status"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

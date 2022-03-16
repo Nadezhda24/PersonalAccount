@@ -38,12 +38,18 @@ public class GraduationWorkHistory extends AppCompatActivity {
 
     private void setInitialData(){
 
-        Statuses.add(new Status("sdsd" , "12/12/12", "", "в исполнении"));
-
-        for (int i =0; i < 10; i++){
-            Statuses.add(new Status("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполнении"));
-        }
-
+        Statuses.add(new Status("поставлена" , "12/12/12", "", "поставлена"));
+        Statuses.add(new Status("в исполнении" , "12/12/12", "", "в исполнении"));
+        Statuses.add(new Status("отправлена на проверку" , "12/12/12", "", "отправлена на проверку"));
+        Statuses.add(new Status("на проверке" , "12/12/12", "", "на проверке"));
+        Statuses.add(new Status("отправлена на доработку" , "12/12/12", "", "отправлена на доработку"));
+        Statuses.add(new Status("в исполнении" , "12/12/12", "", "в исполнении"));
+        Statuses.add(new Status("отправлена на проверку" , "12/12/12", "", "отправлена на проверку"));
+        Statuses.add(new Status("на проверке" , "12/12/12", "", "на проверке"));
+        Statuses.add(new Status("в исполнении" , "12/12/12", "", "в исполнении"));
+        Statuses.add(new Status("отправлена на проверку" , "12/12/12", "", "отправлена на проверку"));
+        Statuses.add(new Status("на проверке" , "12/12/12", "", "на проверке"));
+        Statuses.add(new Status("выполнена" , "12/12/12", "", "выполнена"));
 
 
     }
