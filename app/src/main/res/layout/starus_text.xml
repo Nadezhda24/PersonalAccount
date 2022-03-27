@@ -40,6 +40,7 @@
                     android:id="@+id/imageView9"
                     android:layout_width="25dp"
                     android:layout_height="15dp"
+                    android:contentDescription="@string/app_name"
                     tools:srcCompat="@drawable/history" />
 
                 <FrameLayout

@@ -1,6 +1,10 @@
 package com.example.personalaccount.view;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,9 +17,14 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.personalaccount.R;
+import com.example.personalaccount.controller.HTTPHandler;
 import com.example.personalaccount.controller.TaskEmployeeAdapter;
 import com.example.personalaccount.controller.TaskStudentAdapter;
 import com.example.personalaccount.model.Task;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -34,6 +43,13 @@ public class GraduationWorkFragment extends Fragment {
     BufferedReader reader=null;
     InputStream stream = null;
     HttpsURLConnection connection = null;
+    String jsonRes = null;
+    RecyclerView.Adapter TaskAdapter ;
+    //private static String URL = "http://api.oreluniver.ru/api/task/1";
+    private static String URL = "http://q90932z7.beget.tech/server.php?action=select_languages";
+
+    int UserType = 0;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -81,11 +97,12 @@ public class GraduationWorkFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_graduation_work, container, false);
 
-        setInitialData();
+
+
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewGraduationWork);
-        int UserType = 0;
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         if (UserType == 0){
             TaskStudentAdapter.OnTaskClickListener taskClickListener = new TaskStudentAdapter.OnTaskClickListener() {
                 @Override
@@ -99,8 +116,8 @@ public class GraduationWorkFragment extends Fragment {
                 }
             };
 
-            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            TaskStudentAdapter TaskAdapter = new TaskStudentAdapter(getActivity(),Tasks, taskClickListener);
+
+            TaskAdapter = new TaskStudentAdapter(getActivity(),Tasks, taskClickListener);
 
             recyclerView.setAdapter(TaskAdapter);
         }else {
@@ -115,23 +132,76 @@ public class GraduationWorkFragment extends Fragment {
                             Toast.LENGTH_SHORT).show();
                 }
             };
-            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            TaskEmployeeAdapter TaskAdapter = new TaskEmployeeAdapter(getActivity(),Tasks, taskClickListener);
+
+            TaskAdapter = new TaskEmployeeAdapter(getActivity(),Tasks, taskClickListener);
             recyclerView.setAdapter(TaskAdapter);
         }
 
-
+        setInitialData();
         return view;
     }
 
     private void setInitialData(){
+        try {
+            new GetData().execute().get();
+        } catch (Exception e) { //TODO: сделать нормальное решение для catch
+            Toast.makeText(getActivity(), "Проверьте соединение с интернетом",
+                    Toast.LENGTH_SHORT).show();
 
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
+        }
+
+       /* Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на проверку"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "на проверке"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на доработку"));
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));*/
 
     }
+
+
+    private class GetData extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            HTTPHandler sh = new HTTPHandler();
+            String jsonStr = sh.getData(URL);
+            jsonRes = jsonStr;
+            return null;
+        }
+        //выполняется после doInBackground
+        @Override
+        protected void onPostExecute(Void v) {
+            Tasks.add(new Task(jsonRes , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
+            getActivity().runOnUiThread(new Runnable() {
+                @SuppressLint("NotifyDataSetChanged")
+                @Override
+                public void run() {
+                    if(TaskAdapter != null)
+                    TaskAdapter.notifyDataSetChanged();
+                }
+            });
+        }
+    }
+
+
+    String GetStatus (int type) {
+        switch (type) {
+            case 0:
+                return "поставлена";
+            case 1:
+                return "в исполнении";
+            case 2:
+                return "отправлена на проверку";
+            case 3:
+                return "на проверке";
+            case 4:
+                return "отправлена на доработку";
+            case 5:
+                return "выполнена";
+            default:
+                return "null";
+        }
+    }
+
+
 }

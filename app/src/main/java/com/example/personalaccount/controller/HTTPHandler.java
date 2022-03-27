@@ -18,44 +18,36 @@ public class HTTPHandler {
     }
 
     public String getData(String reqUrl) {
-        String response =  null;
+        URL url;
+        String response = "";
+        HttpURLConnection urlConnection = null;
         try {
-            URL url =  new URL(reqUrl);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            // read the response
-            InputStream in =  new BufferedInputStream(conn.getInputStream());
-            response = convertStreamToString(in);
-        } catch (MalformedURLException e) {
-            System.out.println("MalformedURLException: " + e.getMessage());
-        } catch (ProtocolException e) {
-            System.out.println("ProtocolException: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("IOException: " + e.getMessage());
+            url = new URL(reqUrl);
+
+            urlConnection = (HttpURLConnection) url
+                    .openConnection();
+            urlConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:221.0) Gecko/20100101 Firefox/31.0");
+            urlConnection.connect();
+
+            InputStream in = urlConnection.getInputStream();
+
+            InputStreamReader isw = new InputStreamReader(in);
+
+            int data = isw.read();
+            while (data != -1) {
+                char current = (char) data;
+                data = isw.read();
+                System.out.print(current);
+                response = response + current;
+            }
         } catch (Exception e) {
-            System.out.println("Exception: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
         }
         return response;
     }
 
-    private String convertStreamToString(InputStream is) {
-        BufferedReader reader =  new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb =  new StringBuilder();
-
-        String line;
-        try {
-            while ((line = reader.readLine()) !=  null) {
-                sb.append(line).append('\n');
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return sb.toString();
-    }
 }

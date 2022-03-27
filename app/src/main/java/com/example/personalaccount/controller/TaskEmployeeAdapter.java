@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -52,6 +53,7 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
             case "на проверке": type = REVIEW; break;
             case "отправлена на доработку": type = REVISION; break;
             case "выполнена": type = COMPLETED; break;
+            default: type = -1;
         }
         return type;
     }
@@ -59,7 +61,6 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
     @Override
     public TaskEmployeeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
-      //для преподователя
         switch (viewType)
         {
             case STAGED:
@@ -128,6 +129,15 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                 sent.FileName.setText(Task.GetTaskStatus());
                 sent.ButtonСonfirm.setText("Подтвердить получение файла");
 
+                sent.ButtonСonfirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "Подтвердить получение файла" ,
+                            Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
                 sent.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -145,6 +155,24 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                 review.FileName.setText(Task.GetTaskStatus());
                 review.Button2.setText("Отправить на доработку");
                 review.Button3.setText("Задача выполнена");
+
+                review.Button2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(v.getContext(), "Отправить на доработку" ,
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+                review.Button3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(v.getContext(), "Задача выполнена" ,
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
 
                 review.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -177,6 +205,7 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                 completed.TaskContent.setText(Task.GetTaskContent());
                 completed.TaskStatus.setText(Task.GetTaskStatus());
                 completed.TaskStatus.setTextColor(Color.parseColor("#00B796"));
+
                 completed.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

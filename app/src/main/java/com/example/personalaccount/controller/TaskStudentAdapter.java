@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -52,6 +53,7 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
             case "на проверке": type = REVIEW; break;
             case "отправлена на доработку": type = REVISION; break;
             case "выполнена": type = COMPLETED; break;
+            default: type = -1;
         }
         return type;
     }
@@ -59,7 +61,6 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
     @Override
     public TaskStudentAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
-      //для студента
         switch (viewType)
         {
             case STAGED:
@@ -95,6 +96,15 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 staged.TaskStatus.setTextColor(Color.parseColor("#CC0063"));
                 staged.Button.setText("Подтвердить получение задачи");
 
+                staged.Button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(v.getContext(), "Подтвердить получение задачи" ,
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
                 staged.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -112,6 +122,15 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 performed.TaskStatus.setText(Task.GetTaskStatus());
                 performed.TaskStatus.setTextColor(Color.parseColor("#CC0063"));
                 performed.Button.setText("Загузить документ");
+
+                performed.Button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(v.getContext(), "Загузить документ" ,
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
 
                 performed.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -159,6 +178,15 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 revision.TaskStatus.setTextColor(R.color.DarkBlue);
                 revision.FileName.setText(Task.GetTaskStatus());
                 revision.Button.setText("Подтвердить получение комментария");
+
+                revision.Button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(v.getContext(), "Подтвердить получение комментария" ,
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
 
                 revision.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
