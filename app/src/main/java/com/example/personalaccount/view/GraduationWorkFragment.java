@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -14,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.personalaccount.R;
@@ -45,10 +49,10 @@ public class GraduationWorkFragment extends Fragment {
     HttpsURLConnection connection = null;
     String jsonRes = null;
     RecyclerView.Adapter TaskAdapter ;
-    //private static String URL = "http://api.oreluniver.ru/api/task/1";
-    private static String URL = "http://q90932z7.beget.tech/server.php?action=select_languages";
+    private static String URL = "http://api.oreluniver.ru/api/task/1";
+    //private static String URL = "http://q90932z7.beget.tech/server.php?action=select_languages";
 
-    int UserType = 0;
+    int UserType = 1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -97,9 +101,6 @@ public class GraduationWorkFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_graduation_work, container, false);
 
-
-
-
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewGraduationWork);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -121,6 +122,22 @@ public class GraduationWorkFragment extends Fragment {
 
             recyclerView.setAdapter(TaskAdapter);
         }else {
+
+
+            LinearLayout Layout = (LinearLayout) view.findViewById(R.id.Layout);
+            Button NewTask = new Button(getActivity());
+            NewTask.setText("Поставить новую задачу");
+            Layout.addView(NewTask);
+
+            NewTask.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getActivity(), "Новая задача",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
             TaskEmployeeAdapter.OnTaskClickListener taskClickListener = new TaskEmployeeAdapter.OnTaskClickListener() {
                 @Override
                 public void onTaskClick(Task task, int position) {
@@ -142,20 +159,20 @@ public class GraduationWorkFragment extends Fragment {
     }
 
     private void setInitialData(){
-        try {
+     /*   try {
             new GetData().execute().get();
         } catch (Exception e) { //TODO: сделать нормальное решение для catch
             Toast.makeText(getActivity(), "Проверьте соединение с интернетом",
                     Toast.LENGTH_SHORT).show();
 
-        }
+        }*/
 
-       /* Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на проверку"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "на проверке"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на доработку"));
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));*/
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));
 
     }
 
