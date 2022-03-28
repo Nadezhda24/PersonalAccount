@@ -132,8 +132,8 @@ public class GraduationWorkFragment extends Fragment {
             NewTask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getActivity(), "Новая задача",
-                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), NewTaskActivity.class);
+                    startActivity(intent);
                 }
             });
 
