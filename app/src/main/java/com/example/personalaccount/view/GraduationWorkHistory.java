@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.StatusAdapter;
@@ -25,6 +26,11 @@ public class GraduationWorkHistory extends AppCompatActivity {
         getSupportActionBar().setTitle("История изменений");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
 
+        Bundle arguments = getIntent().getExtras();
+        int id_task =  arguments.getInt("id_task");
+
+        Toast.makeText(this, "Был выбран пункт " + id_task,
+                Toast.LENGTH_SHORT).show();
         setInitialData();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewGraduationWork);

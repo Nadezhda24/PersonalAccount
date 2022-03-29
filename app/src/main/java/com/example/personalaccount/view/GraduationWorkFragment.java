@@ -24,6 +24,7 @@ import com.example.personalaccount.R;
 import com.example.personalaccount.controller.HTTPHandler;
 import com.example.personalaccount.controller.TaskEmployeeAdapter;
 import com.example.personalaccount.controller.TaskStudentAdapter;
+import com.example.personalaccount.model.Status;
 import com.example.personalaccount.model.Task;
 
 import org.json.JSONArray;
@@ -44,6 +45,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class GraduationWorkFragment extends Fragment {
 
     ArrayList<Task> Tasks = new ArrayList<Task>();
+    ArrayList<Status> Statuses = new ArrayList<Status>();
     BufferedReader reader=null;
     InputStream stream = null;
     HttpsURLConnection connection = null;
@@ -51,7 +53,6 @@ public class GraduationWorkFragment extends Fragment {
     RecyclerView.Adapter TaskAdapter ;
     private static String URL = "http://api.oreluniver.ru/api/task/1";
     //private static String URL = "http://q90932z7.beget.tech/server.php?action=select_languages";
-
     int UserType = 1;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -143,11 +144,11 @@ public class GraduationWorkFragment extends Fragment {
                 public void onTaskClick(Task task, int position) {
 
                     Intent intent=new Intent(getContext(),GraduationWorkHistory.class);
+                    intent.putExtra( "id_task",task.GetTaskId());
                     startActivity(intent);
 
-                    Toast.makeText(getActivity(), "Был выбран пункт " + task.GetTaskTopic(),
-                            Toast.LENGTH_SHORT).show();
                 }
+
             };
 
             TaskAdapter = new TaskEmployeeAdapter(getActivity(),Tasks, taskClickListener);
@@ -159,20 +160,20 @@ public class GraduationWorkFragment extends Fragment {
     }
 
     private void setInitialData(){
-     /*   try {
+        try {
             new GetData().execute().get();
         } catch (Exception e) { //TODO: сделать нормальное решение для catch
             Toast.makeText(getActivity(), "Проверьте соединение с интернетом",
                     Toast.LENGTH_SHORT).show();
 
-        }*/
+        }
 
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
+       /* Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на проверку"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "на проверке"));
         Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на доработку"));
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));
+        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена")); */
 
     }
 
@@ -182,21 +183,96 @@ public class GraduationWorkFragment extends Fragment {
         protected Void doInBackground(Void... voids) {
             HTTPHandler sh = new HTTPHandler();
             String jsonStr = sh.getData(URL);
-            jsonRes = jsonStr;
+           // jsonRes = jsonStr;
+            jsonRes = "[\n" +
+                    "    {\n" +
+                    "        \"id\": 9,\n" +
+                    "        \"id_work\": \"1\",\n" +
+                    "        \"topic\": \"g\",\n" +
+                    "        \"date_completion\": null,\n" +
+                    "        \"content\": \"ggg\",\n" +
+                    "        \"id_status\": \"1\",\n" +
+                    "        \"version\": [\n" +
+                    "            {\n" +
+                    "                \"id\": 40,\n" +
+                    "                \"id_task\": \"9\",\n" +
+                    "                \"data_create\": \"2022-02-09\",\n" +
+                    "                \"comment\": null,\n" +
+                    "                \"file\": null,\n" +
+                    "                \"id_status\": \"0\"\n" +
+                    "            }\n" +
+                    "        ]\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "        \"id\": 10,\n" +
+                    "        \"id_work\": \"1\",\n" +
+                    "        \"topic\": \"g\",\n" +
+                    "        \"date_completion\": null,\n" +
+                    "        \"content\": \"ggg\",\n" +
+                    "        \"id_status\": \"1\",\n" +
+                    "        \"version\": [\n" +
+                    "            {\n" +
+                    "                \"id\": 41,\n" +
+                    "                \"id_task\": \"10\",\n" +
+                    "                \"data_create\": \"2022-02-09\",\n" +
+                    "                \"comment\": null,\n" +
+                    "                \"file\": null,\n" +
+                    "                \"id_status\": \"0\"\n" +
+                    "            }\n" +
+                    "        ]\n" +
+                    "    }\n" +
+                    "]";
             return null;
         }
         //выполняется после doInBackground
         @Override
         protected void onPostExecute(Void v) {
-            Tasks.add(new Task(jsonRes , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
-            getActivity().runOnUiThread(new Runnable() {
-                @SuppressLint("NotifyDataSetChanged")
-                @Override
-                public void run() {
-                    if(TaskAdapter != null)
-                    TaskAdapter.notifyDataSetChanged();
+
+
+            if (jsonRes != null){
+                JSONObject json = null;
+
+                try {
+                    json = new JSONObject("{\"tasks\": " + jsonRes + " }");
+                    JSONArray arr = json.getJSONArray("tasks");
+                   for (int i=0; i < arr.length(); i++){
+                        JSONObject obj = arr.getJSONObject(i);
+                        int id = obj.getInt("id");
+                        String topic = obj.getString("topic");
+                        String date_completion = obj.getString("date_completion");
+                        String content =  obj.getString("content");
+                        int id_status = Integer.parseInt( obj.getString("id_status"));
+                       /* JSONArray statuses = json.getJSONArray("version");
+                        for (int j=0;j<statuses.length(); j++){
+                            JSONObject status = arr.getJSONObject(i);
+                            int type = status.getInt("id_status");
+                            String data_create =  obj.getString("data_create");
+                            String comment = obj.getString("comment");
+                            String file = obj.getString("file");
+                            Statuses.add(new com.example.personalaccount.model.Status(GetStatus(type),data_create,comment,file));
+                    }*/
+                       Tasks.add(new Task(id,topic , date_completion, content, GetStatus(id_status)));
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            });
+
+
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @SuppressLint("NotifyDataSetChanged")
+                    @Override
+                    public void run() {
+                        if(TaskAdapter != null)
+                            TaskAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+           else {
+                Toast.makeText(getActivity(), "У Вас нет задач",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

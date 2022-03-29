@@ -1,12 +1,14 @@
 package com.example.personalaccount.model;
 
-public class Status {
+import java.io.Serializable;
+
+public class Status  implements Serializable {
     private String StatusType;
     private String StatusDate;
     private String StatusComment;
     private String StatusFile;
 
-    public Status(String StatusType, String StatusDate, String StatusComment, String StatusFile){
+    public Status( String StatusType, String StatusDate, String StatusComment, String StatusFile){
         this.StatusType = StatusType;
         this.StatusDate = StatusDate;
         this.StatusComment = StatusComment;

@@ -144,6 +144,4 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
             Comment = (TextView) view.findViewById(R.id.Comment);
         }
     }
-
-
 }
