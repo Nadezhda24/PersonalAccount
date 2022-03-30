@@ -1,24 +1,19 @@
 package com.example.personalaccount.view;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.HTTPHandler;
@@ -46,11 +41,13 @@ public class GraduationWorkFragment extends Fragment {
 
     ArrayList<Task> Tasks = new ArrayList<Task>();
     ArrayList<Status> Statuses = new ArrayList<Status>();
-    BufferedReader reader=null;
+    RecyclerView.Adapter TaskAdapter ;
+
+    BufferedReader reader = null;
     InputStream stream = null;
     HttpsURLConnection connection = null;
     String jsonRes = null;
-    RecyclerView.Adapter TaskAdapter ;
+
     private static String URL = "https://api.oreluniver.ru/api/task/0";
     //private static String URL = "http://q90932z7.beget.tech/server.php?action=select_languages";
     int UserType = 0;
@@ -159,20 +156,19 @@ public class GraduationWorkFragment extends Fragment {
     }
 
     private void setInitialData(){
-        try {
+       /* try {
             new GetData().execute().get();
         } catch (Exception e) { //TODO: сделать нормальное решение для catch
             Toast.makeText(getActivity(), "Проверьте соединение с интернетом",
                     Toast.LENGTH_SHORT).show();
+        }*/
 
-        }
-
-       /* Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполении"));
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на проверку"));
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "на проверке"));
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на доработку"));
-        Tasks.add(new Task("sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена")); */
+        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
+        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполнении"));
+        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на проверку"));
+        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "на проверке"));
+        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на доработку"));
+        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));
 
     }
 
@@ -183,45 +179,6 @@ public class GraduationWorkFragment extends Fragment {
             HTTPHandler sh = new HTTPHandler();
             String jsonStr = sh.getData(URL);
             jsonRes = jsonStr;
-          /*  jsonRes = "[\n" +
-                    "    {\n" +
-                    "        \"id\": 9,\n" +
-                    "        \"id_work\": \"1\",\n" +
-                    "        \"topic\": \"g\",\n" +
-                    "        \"date_completion\": null,\n" +
-                    "        \"content\": \"ggg\",\n" +
-                    "        \"id_status\": \"1\",\n" +
-                    "        \"version\": [\n" +
-                    "            {\n" +
-                    "                \"id\": 40,\n" +
-                    "                \"id_task\": \"9\",\n" +
-                    "                \"data_create\": \"2022-02-09\",\n" +
-                    "                \"comment\": null,\n" +
-                    "                \"file\": null,\n" +
-                    "                \"id_status\": \"0\"\n" +
-                    "            }\n" +
-                    "        ]\n" +
-                    "    },\n" +
-                    "    {\n" +
-                    "        \"id\": 10,\n" +
-                    "        \"id_work\": \"1\",\n" +
-                    "        \"topic\": \"g\",\n" +
-                    "        \"date_completion\": null,\n" +
-                    "        \"content\": \"ggg\",\n" +
-                    "        \"id_status\": \"1\",\n" +
-                    "        \"version\": [\n" +
-                    "            {\n" +
-                    "                \"id\": 41,\n" +
-                    "                \"id_task\": \"10\",\n" +
-                    "                \"data_create\": \"2022-02-09\",\n" +
-                    "                \"comment\": null,\n" +
-                    "                \"file\": null,\n" +
-                    "                \"id_status\": \"0\"\n" +
-                    "            }\n" +
-                    "        ]\n" +
-                    "    }\n" +
-                    "]";
-            */
             return null;
         }
         //выполняется после doInBackground
