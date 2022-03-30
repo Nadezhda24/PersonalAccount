@@ -51,9 +51,9 @@ public class GraduationWorkFragment extends Fragment {
     HttpsURLConnection connection = null;
     String jsonRes = null;
     RecyclerView.Adapter TaskAdapter ;
-    private static String URL = "http://api.oreluniver.ru/api/task/1";
+    private static String URL = "https://api.oreluniver.ru/api/task/0";
     //private static String URL = "http://q90932z7.beget.tech/server.php?action=select_languages";
-    int UserType = 1;
+    int UserType = 0;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -111,10 +111,9 @@ public class GraduationWorkFragment extends Fragment {
                 public void onTaskClick(Task task, int position) {
 
                     Intent intent=new Intent(getContext(),GraduationWorkHistory.class);
+                    intent.putExtra( "id_task",task.GetTaskId());
                     startActivity(intent);
 
-                    Toast.makeText(getActivity(), "Был выбран пункт " + task.GetTaskTopic(),
-                            Toast.LENGTH_SHORT).show();
                 }
             };
 
@@ -183,8 +182,8 @@ public class GraduationWorkFragment extends Fragment {
         protected Void doInBackground(Void... voids) {
             HTTPHandler sh = new HTTPHandler();
             String jsonStr = sh.getData(URL);
-           // jsonRes = jsonStr;
-            jsonRes = "[\n" +
+            jsonRes = jsonStr;
+          /*  jsonRes = "[\n" +
                     "    {\n" +
                     "        \"id\": 9,\n" +
                     "        \"id_work\": \"1\",\n" +
@@ -222,6 +221,7 @@ public class GraduationWorkFragment extends Fragment {
                     "        ]\n" +
                     "    }\n" +
                     "]";
+            */
             return null;
         }
         //выполняется после doInBackground

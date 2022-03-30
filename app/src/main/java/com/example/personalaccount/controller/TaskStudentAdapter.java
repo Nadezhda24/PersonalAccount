@@ -43,12 +43,13 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
         this.inflater = LayoutInflater.from(context);
     }
 
+
     public int getItemViewType(int position)
     {
         int type = 0;
         switch (Tasks.get(position).GetTaskStatus()){
             case "поставлена": type = STAGED; break;
-            case "в исполении": type = PERFORMED; break;
+            case "в исполнении": type = PERFORMED; break;
             case "отправлена на проверку": type = SENT; break;
             case "на проверке": type = REVIEW; break;
             case "отправлена на доработку": type = REVISION; break;
