@@ -92,7 +92,7 @@ public class GraduationWorkHistory extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             HTTPHandler sh = new HTTPHandler();
-            String jsonStr = sh.getData(URL);
+            String jsonStr = sh.getData(URL,"GET");
             jsonRes = jsonStr;
             return null;
         }

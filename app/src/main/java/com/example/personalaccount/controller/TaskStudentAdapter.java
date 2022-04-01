@@ -100,9 +100,12 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 staged.Button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "Подтвердить получение задачи" ,
-                                Toast.LENGTH_SHORT).show();
+                     //   Toast.makeText(v.getContext(), "Подтвердить получение задачи" ,
+                     //           Toast.LENGTH_SHORT).show();
+                        HTTPHandler sh = new HTTPHandler();
 
+                        String URL = "http://api.oreluniver.ru/api/task/history";
+                        String jsonStr = sh.setData(URL, "POST",  "task_is=1");
                     }
                 });
 
@@ -122,12 +125,12 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 performed.TaskContent.setText(Task.GetTaskContent());
                 performed.TaskStatus.setText(Task.GetTaskStatus());
                 performed.TaskStatus.setTextColor(Color.parseColor("#CC0063"));
-                performed.Button.setText("Загузить документ");
+                performed.Button.setText("Загрузить документ");
 
                 performed.Button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "Загузить документ" ,
+                        Toast.makeText(v.getContext(), "Загрузить документ" ,
                                 Toast.LENGTH_SHORT).show();
 
                     }

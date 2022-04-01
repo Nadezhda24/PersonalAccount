@@ -35,9 +35,12 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/Comment"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/FileName"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/Comment"
-            app:srcCompat="@drawable/document" />
+            app:srcCompat="@drawable/document"
+            tools:layout_editor_absoluteY="2dp"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

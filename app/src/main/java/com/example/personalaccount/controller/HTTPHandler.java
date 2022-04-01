@@ -17,29 +17,31 @@ public class HTTPHandler {
     public HTTPHandler() {
     }
 
-    public String getData(String reqUrl) {
+    public String getData(String reqUrl, String method) {
         URL url;
         String response = "";
         HttpURLConnection urlConnection = null;
         try {
-            url = new URL(reqUrl);
+                url = new URL(reqUrl);
 
-            urlConnection = (HttpURLConnection) url
-                    .openConnection();
-            urlConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:221.0) Gecko/20100101 Firefox/31.0");
-            urlConnection.connect();
+                urlConnection = (HttpURLConnection) url
+                        .openConnection();
+                urlConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:221.0) Gecko/20100101 Firefox/31.0");
+                urlConnection.connect();
 
-            InputStream in = urlConnection.getInputStream();
+                InputStream in = urlConnection.getInputStream();
 
-            InputStreamReader isw = new InputStreamReader(in);
+                InputStreamReader isw = new InputStreamReader(in);
 
-            int data = isw.read();
-            while (data != -1) {
-                char current = (char) data;
-                data = isw.read();
-                System.out.print(current);
-                response = response + current;
-            }
+                int data = isw.read();
+                while (data != -1) {
+                    char current = (char) data;
+                    data = isw.read();
+                    System.out.print(current);
+                    response = response + current;
+                }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -49,5 +51,34 @@ public class HTTPHandler {
         }
         return response;
     }
+
+    public String setData(String reqUrl, String method, String params) {
+        URL url;
+        String response = "";
+        HttpURLConnection urlConnection = null;
+        try {
+                url = new URL(reqUrl);
+
+                urlConnection = (HttpURLConnection) url
+                        .openConnection();
+                urlConnection.setRequestMethod("POST");
+              //  urlConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:221.0) Gecko/20100101 Firefox/31.0");
+             //   urlConnection.connect();
+
+
+                urlConnection.setDoOutput(true);
+                urlConnection.getOutputStream().write(params.getBytes());
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+        }
+        return response;
+    }
+
 
 }

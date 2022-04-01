@@ -156,19 +156,12 @@ public class GraduationWorkFragment extends Fragment {
     }
 
     private void setInitialData(){
-       /* try {
+        try {
             new GetData().execute().get();
         } catch (Exception e) { //TODO: сделать нормальное решение для catch
             Toast.makeText(getActivity(), "Проверьте соединение с интернетом",
                     Toast.LENGTH_SHORT).show();
-        }*/
-
-        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
-        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполнении"));
-        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на проверку"));
-        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "на проверке"));
-        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на доработку"));
-        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));
+        }
 
     }
 
@@ -177,7 +170,7 @@ public class GraduationWorkFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... voids) {
             HTTPHandler sh = new HTTPHandler();
-            String jsonStr = sh.getData(URL);
+            String jsonStr = sh.getData(URL, "GET");
             jsonRes = jsonStr;
             return null;
         }
@@ -192,22 +185,13 @@ public class GraduationWorkFragment extends Fragment {
                 try {
                     json = new JSONObject("{\"tasks\": " + jsonRes + " }");
                     JSONArray arr = json.getJSONArray("tasks");
-                   for (int i=0; i < arr.length(); i++){
+                   for (int i=0; i < arr.length(); i++) {
                         JSONObject obj = arr.getJSONObject(i);
                         int id = obj.getInt("id");
                         String topic = obj.getString("topic");
                         String date_completion = obj.getString("date_completion");
                         String content =  obj.getString("content");
                         int id_status = Integer.parseInt( obj.getString("id_status"));
-                       /* JSONArray statuses = json.getJSONArray("version");
-                        for (int j=0;j<statuses.length(); j++){
-                            JSONObject status = arr.getJSONObject(i);
-                            int type = status.getInt("id_status");
-                            String data_create =  obj.getString("data_create");
-                            String comment = obj.getString("comment");
-                            String file = obj.getString("file");
-                            Statuses.add(new com.example.personalaccount.model.Status(GetStatus(type),data_create,comment,file));
-                    }*/
                        Tasks.add(new Task(id,topic , date_completion, content, GetStatus(id_status)));
                     }
 
