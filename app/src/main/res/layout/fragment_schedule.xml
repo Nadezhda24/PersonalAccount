@@ -76,7 +76,7 @@
                     android:padding="10dp"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
-                    android:text="02.03.2021"
+                    android:text="23.03.2022"
                     android:textColor="?attr/actionMenuTextColor"
                     app:layout_constraintBottom_toTopOf="@+id/RecyclerViewShedule"
                     app:layout_constraintEnd_toEndOf="parent"

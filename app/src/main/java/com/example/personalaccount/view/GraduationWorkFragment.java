@@ -156,20 +156,20 @@ public class GraduationWorkFragment extends Fragment {
     }
 
     private void setInitialData(){
-       /* try {
+        try {
             new GetData().execute().get();
         } catch (Exception e) { //TODO: сделать нормальное решение для catch
             Toast.makeText(getActivity(), "Проверьте соединение с интернетом",
                     Toast.LENGTH_SHORT).show();
-        }*/
+        }
 
-        Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
+       /* Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "поставлена"));
         Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "в исполнении"));
         Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на проверку"));
         Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "на проверке"));
         Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "отправлена на доработку"));
         Tasks.add(new Task(1,"sdsd" , "12/12/12", "LKSMDLCKSMDLKCSLKDMLCKMSLDKMCLSDKCSLD", "выполнена"));
-
+*/
     }
 
 
