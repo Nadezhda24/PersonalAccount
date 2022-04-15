@@ -16,7 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.personalaccount.R;
 import com.example.personalaccount.model.Task;
 
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStudentAdapter.ViewHolder>{
 
@@ -82,6 +85,9 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
 
     }
 
+    public void Update(){
+        notifyDataSetChanged();
+    }
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -100,13 +106,27 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 staged.Button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                     //   Toast.makeText(v.getContext(), "Подтвердить получение задачи" ,
-                     //           Toast.LENGTH_SHORT).show();
-                        HTTPHandler sh = new HTTPHandler();
+
+
+                        Task.SetTaskStatus("в исполнении");
+
+                        Toast.makeText(v.getContext(), Task.GetTaskStatus() ,
+                                Toast.LENGTH_SHORT).show();
+
+                        if (Task.GetTaskStatus() == "в исполнении") Update();
+                        /*HTTPHandler sh = new HTTPHandler();
 
                         String URL = "http://api.oreluniver.ru/api/task/history";
-                        String jsonStr = sh.setData(URL, "POST",  "task_is=1");
+                        //создание сообщения для отпарвки на сервер
+                        Map<String,String> params = new HashMap<>();
+                        params.put("task_is", "1");
+                        byte[] out = params.toString().getBytes(StandardCharsets.UTF_8);
+
+                        String jsonStr = sh.setData(URL, "POST",  out);
+                        */
                     }
+
+
                 });
 
                 staged.itemView.setOnClickListener(new View.OnClickListener() {
@@ -133,8 +153,12 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                         Toast.makeText(v.getContext(), "Загрузить документ" ,
                                 Toast.LENGTH_SHORT).show();
 
+                        Task.SetTaskStatus("отправлена на проверку");
+                        if (Task.GetTaskStatus() == "отправлена на проверку") Update();
                     }
                 });
+
+
 
                 performed.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -150,7 +174,17 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 sent.TaskContent.setText(Task.GetTaskContent());
                 sent.TaskStatus.setText(Task.GetTaskStatus());
                 sent.TaskStatus.setTextColor(R.color.DarkBlue);
-                sent.FileName.setText(Task.GetTaskStatus());
+                sent.FileName.setText(Task.GetTaskTopic());
+
+
+                sent.FileName.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Task.SetTaskStatus("на проверке");
+                        if (Task.GetTaskStatus() == "на проверке") Update();
+                    }
+                });
+
                 sent.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -165,7 +199,24 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 review.TaskContent.setText(Task.GetTaskContent());
                 review.TaskStatus.setText(Task.GetTaskStatus());
                 review.TaskStatus.setTextColor(R.color.DarkBlue);
-                review.FileName.setText(Task.GetTaskStatus());
+                review.FileName.setText(Task.GetTaskTopic());
+
+                review.TaskStatus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Task.SetTaskStatus("выполнена");
+                        if (Task.GetTaskStatus() == "выполнена") Update();
+                    }
+                });
+
+                review.FileName.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Task.SetTaskStatus("отправлена на доработку");
+                        if (Task.GetTaskStatus() == "отправлена на доработку") Update();
+                    }
+                });
+
                 review.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -180,14 +231,17 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 revision.TaskContent.setText(Task.GetTaskContent());
                 revision.TaskStatus.setText(Task.GetTaskStatus());
                 revision.TaskStatus.setTextColor(R.color.DarkBlue);
-                revision.FileName.setText(Task.GetTaskStatus());
+                revision.FileName.setText(Task.GetTaskTopic());
                 revision.Button.setText("Подтвердить получение комментария");
+
 
                 revision.Button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(v.getContext(), "Подтвердить получение комментария" ,
                                 Toast.LENGTH_SHORT).show();
+                        Task.SetTaskStatus("в исполнении");
+                        if (Task.GetTaskStatus() == "в исполнении") Update();
 
                     }
                 });
@@ -206,6 +260,7 @@ public class TaskStudentAdapter<override> extends RecyclerView.Adapter<TaskStude
                 completed.TaskContent.setText(Task.GetTaskContent());
                 completed.TaskStatus.setText(Task.GetTaskStatus());
                 completed.TaskStatus.setTextColor(Color.parseColor("#00B796"));
+
                 completed.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

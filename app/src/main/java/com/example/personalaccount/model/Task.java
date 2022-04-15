@@ -6,6 +6,8 @@ public class Task {
     private String TaskDate;
     private String TaskContent;
     private String TaskStatus;
+    private String File;
+
 
     public Task(int TaskId, String TaskTopic, String TaskDate, String TaskContent, String TaskStatus){
         this.TaskId = TaskId;

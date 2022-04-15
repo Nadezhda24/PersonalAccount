@@ -50,7 +50,7 @@ public class GraduationWorkFragment extends Fragment {
 
     private static String URL = "https://api.oreluniver.ru/api/task/0";
     //private static String URL = "http://q90932z7.beget.tech/server.php?action=select_languages";
-    int UserType = 0;
+    int UserType = 1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -205,7 +205,6 @@ public class GraduationWorkFragment extends Fragment {
                     @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void run() {
-                        if(TaskAdapter != null)
                             TaskAdapter.notifyDataSetChanged();
                     }
                 });

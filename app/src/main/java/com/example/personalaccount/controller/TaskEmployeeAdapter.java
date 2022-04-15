@@ -81,6 +81,10 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
 
     }
 
+    public void Update(){
+        notifyDataSetChanged();
+    }
+
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -94,6 +98,14 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                 staged.TaskContent.setText(Task.GetTaskContent());
                 staged.TaskStatus.setText(Task.GetTaskStatus());
                 staged.TaskStatus.setTextColor(Color.parseColor("#CC0063"));
+
+                staged.TaskStatus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Task.SetTaskStatus("в исполнении");
+                        if (Task.GetTaskStatus() == "в исполнении") Update();
+                    }
+                });
 
                 staged.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -111,6 +123,14 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                 performed.TaskContent.setText(Task.GetTaskContent());
                 performed.TaskStatus.setText(Task.GetTaskStatus());
                 performed.TaskStatus.setTextColor(Color.parseColor("#CC0063"));
+
+                performed.TaskStatus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Task.SetTaskStatus("отправлена на проверку");
+                        if (Task.GetTaskStatus() == "отправлена на проверку") Update();
+                    }
+                });
 
                 performed.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -134,6 +154,9 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(), "Подтвердить получение файла" ,
                             Toast.LENGTH_SHORT).show();
+
+                    Task.SetTaskStatus("на проверке");
+                    if (Task.GetTaskStatus() == "на проверке") Update();
 
                 }
             });
@@ -159,8 +182,12 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                 review.Button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         Toast.makeText(v.getContext(), "Отправить на доработку" ,
                                 Toast.LENGTH_SHORT).show();
+
+                        Task.SetTaskStatus("отправлена на доработку");
+                        if (Task.GetTaskStatus() == "отправлена на доработку") Update();
 
                     }
                 });
@@ -170,6 +197,9 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                     public void onClick(View v) {
                         Toast.makeText(v.getContext(), "Задача выполнена" ,
                                 Toast.LENGTH_SHORT).show();
+
+                        Task.SetTaskStatus("выполнена");
+                        if (Task.GetTaskStatus() == "выполнена") Update();
 
                     }
                 });
@@ -190,6 +220,13 @@ public class TaskEmployeeAdapter<override> extends RecyclerView.Adapter<TaskEmpl
                 revision.TaskStatus.setTextColor(R.color.DarkBlue);
                 revision.FileName.setText(Task.GetTaskStatus());
 
+                revision.TaskStatus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Task.SetTaskStatus("в исполнении");
+                        if (Task.GetTaskStatus() == "в исполнении") Update();
+                    }
+                });
 
                 revision.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
