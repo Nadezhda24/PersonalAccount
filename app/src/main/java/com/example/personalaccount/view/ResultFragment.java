@@ -1,18 +1,17 @@
 package com.example.personalaccount.view;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.example.personalaccount.R;
-import com.example.personalaccount.model.Result;
 import com.example.personalaccount.controller.ResultAdapter;
+import com.example.personalaccount.model.Result;
 
 import java.util.ArrayList;
 
@@ -86,14 +85,23 @@ public class ResultFragment extends Fragment {
 
 
     private void setInitialData(){
-        Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
-        Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
-        Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
-        Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
-        Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
-        Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
-        Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
-        Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
 
+        Results.add(new Result("Web-программирование", "Новиков С.В.", "Экзамен", "Отлично"));
+        Results.add(new Result("Алгоритмы и структуры данных", "Фролов А.И.", "Экзамен", "Отлично"));
+        Results.add(new Result("Алгоритмы и структуры данных(К/Р)", "Артемов А.В.", "К/Р", "Отлично"));
+        Results.add(new Result("Иностранный язык", "Легостаева О.В.", "Экзамен", "Отлично"));
+        Results.add(new Result("Компьютерная графика", "Чижов А.В.", "Зачет", "Зачет"));
+
+        /*
+       Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
+        Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
+        Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
+        Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
+        Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
+        Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
+        Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
+        Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
+    */
     }
+
 }
