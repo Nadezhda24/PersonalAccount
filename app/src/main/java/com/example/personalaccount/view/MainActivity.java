@@ -6,6 +6,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -49,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(MenuItem item) {
-        Toast.makeText(this, "Выбор расписания",
-                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, ChoiceSchedule.class);
+        startActivity(intent);
+
     }
 }
