@@ -7,6 +7,7 @@
     tools:context=".view.ScheduleFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
 
 

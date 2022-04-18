@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -69,6 +70,7 @@ public class ScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
         setInitialData();
+
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewShedule);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
