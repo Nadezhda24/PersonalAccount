@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.NoteAdapter;
 import com.example.personalaccount.model.Note;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
@@ -71,13 +73,44 @@ public class NoteListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_note_list, container, false);
 
-        setInitialData();
+
+        TabLayout tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout) ;
+        //добавление семестров обучения
+        int count_category = 3;
+        for (int i=0; i < count_category; i ++){
+            tabLayout.addTab(tabLayout.newTab().setText("Категория " + String.valueOf(i+1)));
+        }
+
+        setInitialData(-1);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                Toast.makeText(getActivity(), String.valueOf(tab.getText()),
+                        Toast.LENGTH_SHORT).show();
+                setInitialData(Integer.parseInt(String.valueOf(tab.getId())));
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewNotes);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         NoteAdapter NoteAdapter = new NoteAdapter(getActivity(), Notes);
 
         recyclerView.setAdapter(NoteAdapter);
+
+
 
         ImageView ImageView = (ImageView) view.findViewById(R.id.add_note);
         ImageView.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +123,7 @@ public class NoteListFragment extends Fragment {
         return view;
     }
 
-    private void setInitialData(){
+    private void setInitialData(int category){
         Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
         Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
         Notes.add(new Note("Новая записка", "Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп Сдать лабу по Филп"));
