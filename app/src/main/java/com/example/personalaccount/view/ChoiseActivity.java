@@ -1,4 +1,4 @@
-package com.example.personalaccount;
+package com.example.personalaccount.view;
 
 import android.app.Dialog;
 import android.graphics.Color;
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.personalaccount.R;
 import com.example.personalaccount.controller.NoteAdapter;
 import com.example.personalaccount.model.Note;
 

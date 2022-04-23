@@ -2,15 +2,15 @@ package com.example.personalaccount.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.ChatAdapter;
@@ -86,6 +86,16 @@ public class SystemMessageFragment extends Fragment {
             }
         } ;
 
+        android.widget.ImageView ImageView = (ImageView) view.findViewById(R.id.add);
+        ImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(),ChoiseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ChatAdapter  ChatAdapter = new ChatAdapter(getActivity(),Chats, chatClickListener);
 
@@ -94,21 +104,11 @@ public class SystemMessageFragment extends Fragment {
         return view;
     }
 
+
+
     private void setInitialData(){
         Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
         Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-    }
+      }
 
 }
