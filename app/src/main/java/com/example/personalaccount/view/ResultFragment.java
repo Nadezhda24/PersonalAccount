@@ -1,17 +1,21 @@
 package com.example.personalaccount.view;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TableLayout;
+import android.widget.Toast;
+
 import com.example.personalaccount.R;
-import com.example.personalaccount.controller.ResultAdapter;
 import com.example.personalaccount.model.Result;
+import com.example.personalaccount.controller.ResultAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
@@ -72,7 +76,39 @@ public class ResultFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_result, container, false);
 
-        setInitialData();
+        TabLayout tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout) ;
+
+       //добавление семестров обучения
+        int semesrt = 8;
+        for (int i=0; i < semesrt; i ++){
+            tabLayout.addTab(tabLayout.newTab().setText(String.valueOf(i+1)));
+
+        }
+        tabLayout.getTabAt(semesrt-1).select();
+        setInitialData(semesrt);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                Toast.makeText(getActivity(), String.valueOf(tab.getText()),
+                        Toast.LENGTH_SHORT).show();
+                setInitialData(Integer.parseInt((String) tab.getText()));
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewResults);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -84,16 +120,8 @@ public class ResultFragment extends Fragment {
     }
 
 
-    private void setInitialData(){
-
-        Results.add(new Result("Web-программирование", "Новиков С.В.", "Экзамен", "Отлично"));
-        Results.add(new Result("Алгоритмы и структуры данных", "Фролов А.И.", "Экзамен", "Отлично"));
-        Results.add(new Result("Алгоритмы и структуры данных(К/Р)", "Артемов А.В.", "К/Р", "Отлично"));
-        Results.add(new Result("Иностранный язык", "Легостаева О.В.", "Экзамен", "Отлично"));
-        Results.add(new Result("Компьютерная графика", "Чижов А.В.", "Зачет", "Зачет"));
-
-        /*
-       Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
+    private void setInitialData(int semestr){
+        Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
         Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
         Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
         Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
@@ -101,7 +129,6 @@ public class ResultFragment extends Fragment {
         Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
         Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
         Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
-    */
-    }
 
+    }
 }
