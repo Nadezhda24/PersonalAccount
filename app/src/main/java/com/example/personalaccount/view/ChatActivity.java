@@ -19,5 +19,7 @@ public class ChatActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Чат");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
 
+
+
     }
 }

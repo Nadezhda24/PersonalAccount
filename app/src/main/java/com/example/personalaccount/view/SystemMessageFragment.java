@@ -1,6 +1,8 @@
 package com.example.personalaccount.view;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.ChatAdapter;
+import com.example.personalaccount.controller.HTTPHandler;
 import com.example.personalaccount.model.Chat;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -26,6 +33,12 @@ import java.util.ArrayList;
 public class SystemMessageFragment extends Fragment {
 
     ArrayList<Chat> Chats = new ArrayList<Chat>();
+
+    String jsonRes = null;
+
+    private static String URL = "https://api.oreluniver.ru/api/task/0";
+
+    ChatAdapter ChatAdapter;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -97,7 +110,7 @@ public class SystemMessageFragment extends Fragment {
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ChatAdapter  ChatAdapter = new ChatAdapter(getActivity(),Chats, chatClickListener);
+        ChatAdapter = new ChatAdapter(getActivity(),Chats, chatClickListener);
 
         recyclerView.setAdapter(ChatAdapter);
 
@@ -107,8 +120,63 @@ public class SystemMessageFragment extends Fragment {
 
 
     private void setInitialData(){
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", "Функциональное и логическое программирование", ""));
+        Chats.add(new Chat("Функциональное и логическое программирование",  ""));
+        Chats.add(new Chat("Функциональное и логическое программирование", ""));
       }
 
+/*
+    private void setInitialData(){
+        try {
+            new GetData().execute().get();
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "Проверьте соединение с интернетом",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private class GetData extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            HTTPHandler sh = new HTTPHandler();
+            String jsonStr = sh.getData(URL, "GET");
+            jsonRes = jsonStr;
+            return null;
+        }
+        //выполняется после doInBackground
+        @Override
+        protected void onPostExecute(Void v) {
+
+
+            if (jsonRes != null){
+                JSONObject json = null;
+
+                try {
+                    json = new JSONObject("{\"chats\": " + jsonRes + " }");
+                    JSONArray arr = json.getJSONArray("chats");
+                    for (int i=0; i < arr.length(); i++) {
+
+                        //  Chats.add(new Chat());
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @SuppressLint("NotifyDataSetChanged")
+                    @Override
+                    public void run() {
+                        ChatAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+            else {
+                Toast.makeText(getActivity(), "У Вас нет задач",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+*/
 }

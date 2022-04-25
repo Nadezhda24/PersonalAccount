@@ -44,7 +44,6 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     public void onBindViewHolder(ChatAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Chat Chat = Chats.get(position);
         holder.ChatTitle.setText(Chat.GetChatTitle());
-        holder.ChatText.setText(Chat.GetChatText());
         holder.ChatCountUnread.setText(Chat.GetChatCountUnread());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -64,12 +63,11 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        final TextView ChatTitle, ChatText,ChatCountUnread ;
+        final TextView ChatTitle,ChatCountUnread ;
         final FrameLayout frameLayout;
         ViewHolder(View view){
             super(view);
             ChatTitle = (TextView) view.findViewById(R.id.ChatTitle);
-            ChatText = (TextView) view.findViewById(R.id.ChatText);
             ChatCountUnread = (TextView) view.findViewById(R.id.ChatCountUnread);
             frameLayout = (FrameLayout) view.findViewById(R.id.frameLayout);
         }

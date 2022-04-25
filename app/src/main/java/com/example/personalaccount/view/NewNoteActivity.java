@@ -7,15 +7,23 @@ import android.app.TimePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Layout;
 import android.text.format.DateUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.personalaccount.R;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.Calendar;
+import java.util.zip.Inflater;
 
 public class NewNoteActivity extends AppCompatActivity {
 
@@ -29,6 +37,16 @@ public class NewNoteActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Заметки");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
         currentDateTime = (TextView)findViewById(R.id.Data);
+
+        //добавление котегорий пользователей
+        int category = 10;
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+        for (int i =0; i < category; i++){
+            TextView categoty = new TextView(this);
+            categoty.setText("Категория 1");
+            linearLayout.addView(categoty, i);
+        }
+
         setInitialDateTime();
     }
 

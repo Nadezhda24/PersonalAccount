@@ -43,13 +43,11 @@ public class GraduationWorkFragment extends Fragment {
     ArrayList<Status> Statuses = new ArrayList<Status>();
     RecyclerView.Adapter TaskAdapter ;
 
-    BufferedReader reader = null;
-    InputStream stream = null;
-    HttpsURLConnection connection = null;
+
     String jsonRes = null;
 
     private static String URL = "https://api.oreluniver.ru/api/task/0";
-    //private static String URL = "http://q90932z7.beget.tech/server.php?action=select_languages";
+
     int UserType = 1;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -158,7 +156,7 @@ public class GraduationWorkFragment extends Fragment {
     private void setInitialData(){
         try {
             new GetData().execute().get();
-        } catch (Exception e) { //TODO: сделать нормальное решение для catch
+        } catch (Exception e) {
             Toast.makeText(getActivity(), "Проверьте соединение с интернетом",
                     Toast.LENGTH_SHORT).show();
         }
