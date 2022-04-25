@@ -1,29 +1,22 @@
 package com.example.personalaccount.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.Layout;
 import android.text.format.DateUtils;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.personalaccount.R;
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.Calendar;
-import java.util.zip.Inflater;
 
 public class NewNoteActivity extends AppCompatActivity {
 
@@ -39,13 +32,17 @@ public class NewNoteActivity extends AppCompatActivity {
         currentDateTime = (TextView)findViewById(R.id.Data);
 
         //добавление котегорий пользователей
-        int category = 10;
+        int category = 2;
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
-        for (int i =0; i < category; i++){
+
             TextView categoty = new TextView(this);
-            categoty.setText("Категория 1");
-            linearLayout.addView(categoty, i);
-        }
+            categoty.setText("Важное");
+
+            TextView categoty1 = new TextView(this);
+            categoty1.setText("ЛБ");
+            linearLayout.addView(categoty, 0);
+            linearLayout.addView(categoty1, 1);
+
 
         setInitialDateTime();
     }
