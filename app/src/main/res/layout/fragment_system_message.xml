@@ -52,19 +52,7 @@
                         <com.google.android.material.tabs.TabItem
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ЛК" />
-
-                        <com.google.android.material.tabs.TabItem
-                            android:id="@+id/tabItem"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ЛБ" />
-
-                        <com.google.android.material.tabs.TabItem
-                            android:id="@+id/tabItem2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ПР" />
+                            android:text="Групповые" />
 
                     </com.google.android.material.tabs.TabLayout>
                 </LinearLayout>
@@ -73,7 +61,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RecyclerViewChats"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
