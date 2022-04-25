@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,6 +44,14 @@ public class ScheduleDayAdapter extends RecyclerView.Adapter<ScheduleDayAdapter.
         holder.LessonRoom.setText(ScheduleDay.GetLessonRoom());
         holder.LessonTeacher.setText(ScheduleDay.GetLessonTeacher());
 
+        holder.Note.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            //    Intent intent=new Intent(getApplicationContext() , NoteActivity.class);
+            //    startActivity(intent);
+            }
+        });
+
         if (ScheduleDay.GetLessonType() == "лекция") holder.frameLayout.setBackgroundResource(R.color.LK);
         else if (ScheduleDay.GetLessonType() == "лабораторная работа") holder.frameLayout.setBackgroundResource(R.color.LB);
         else if (ScheduleDay.GetLessonType() == "практическое занятие") holder.frameLayout.setBackgroundResource(R.color.PZ);
@@ -63,9 +72,11 @@ public class ScheduleDayAdapter extends RecyclerView.Adapter<ScheduleDayAdapter.
         final TextView LessonNumder,LessonStart,
                 LessonEnd, LessonName, LessonType,
                 LessonRoom, LessonTeacher;
+        final ImageView Note;
         final FrameLayout frameLayout;
         ViewHolder(View view){
             super(view);
+            Note = (ImageView) view.findViewById(R.id.imageView2);
             LessonNumder = (TextView) view.findViewById(R.id.LessonNumder);
             LessonStart = (TextView) view.findViewById(R.id.LessonStart);
             LessonEnd = (TextView) view.findViewById(R.id.LessonEnd);

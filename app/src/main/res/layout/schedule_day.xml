@@ -143,14 +143,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Ужаринский А.Ю."
         android:textColor="?attr/actionMenuTextColor"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/LessonEnd"
-        app:layout_constraintEnd_toEndOf="@+id/LessonRoom"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/LessonRoom" />
+        app:layout_constraintTop_toBottomOf="@+id/LessonRoom"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -171,5 +173,14 @@
         app:layout_constraintStart_toStartOf="@+id/LessonName"
         app:layout_constraintTop_toTopOf="@+id/LessonType"
         app:srcCompat="@drawable/type_lesson" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="@+id/LessonRoom"
+        app:layout_constraintTop_toTopOf="@+id/LessonTeacher"
+        app:srcCompat="@drawable/bottom_menu_notes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
