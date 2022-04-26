@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:paddingRight="5dp"
         android:paddingBottom="2dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/MessageUser"
@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="5dp"
-            android:text="Дата и Время"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerViewFiles" />
 
@@ -45,12 +44,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/MessageTitle"
-            app:layout_constraintStart_toStartOf="@+id/MessageTitle"
-            app:layout_constraintTop_toBottomOf="@+id/MessageTitle" />
+            app:layout_constraintEnd_toEndOf="@+id/MessageText"
+            app:layout_constraintStart_toStartOf="@+id/MessageText"
+            app:layout_constraintTop_toBottomOf="@+id/MessageText" />
 
         <TextView
-            android:id="@+id/MessageTitle"
+            android:id="@+id/MessageText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
