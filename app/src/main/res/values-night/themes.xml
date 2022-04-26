@@ -13,6 +13,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
     <drawable name="logo">@drawable/logoblack</drawable>
     <drawable name="schedule_fon">@drawable/schedule_fon_black</drawable>

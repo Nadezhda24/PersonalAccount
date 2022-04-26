@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
 
     <drawable name="logo">@drawable/logolight</drawable>
@@ -24,6 +25,7 @@
     <drawable name="document">@drawable/document_light</drawable>
     <drawable name="send">@drawable/send_light</drawable>
     <drawable name="more">@drawable/more_light</drawable>
+
 
     <style name="Theme.PersonalAccount.NoActionBar">
         <item name="windowActionBar">false</item>
