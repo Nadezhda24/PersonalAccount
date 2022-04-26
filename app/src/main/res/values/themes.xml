@@ -25,6 +25,7 @@
     <drawable name="document">@drawable/document_light</drawable>
     <drawable name="send">@drawable/send_light</drawable>
     <drawable name="more">@drawable/more_light</drawable>
+    <drawable name="file_fon">@drawable/file_fon_light</drawable>
 
 
     <style name="Theme.PersonalAccount.NoActionBar">

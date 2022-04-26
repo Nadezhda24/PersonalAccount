@@ -23,9 +23,8 @@
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Дисциплина:"
-        android:textColor="#00416D"
+        android:textColor="?attr/actionMenuTextColor"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +35,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Преподаватель:"
-        android:textColor="#00416D"
+        android:textColor="?attr/actionMenuTextColor"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/SubjectName"
         app:layout_constraintTop_toBottomOf="@+id/SubjectName" />
@@ -48,7 +47,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Тип промежуточной аттестации:"
-        android:textColor="#00416D"
+        android:textColor="?attr/actionMenuTextColor"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/SubjectTeacherTitle"
         app:layout_constraintTop_toBottomOf="@+id/SubjectTeacherTitle" />
@@ -72,7 +71,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Результат промежуточной аттестации:"
-        android:textColor="#00416D"
+        android:textColor="?attr/actionMenuTextColor"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/SubjectTypeTitle"
         app:layout_constraintTop_toBottomOf="@+id/SubjectTypeTitle" />
@@ -84,7 +83,7 @@
         android:layout_marginStart="10dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Отлично"
-        android:textColor="#00B796"
+        android:textColor="?attr/actionMenuTextColor"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/SubjectResultTitle"
@@ -109,6 +108,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Качество и тестирование программного обеспечения"
+        android:textAlignment="textStart"
         android:textColor="?attr/actionMenuTextColor"
         android:textSize="16sp"
         android:textStyle="bold"

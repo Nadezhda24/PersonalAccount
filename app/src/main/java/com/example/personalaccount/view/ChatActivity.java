@@ -1,9 +1,5 @@
 package com.example.personalaccount.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -11,11 +7,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.MessageAdapter;
-import com.example.personalaccount.controller.NoteAdapter;
 import com.example.personalaccount.model.Message;
-import com.example.personalaccount.model.Note;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -68,15 +66,9 @@ public class ChatActivity extends AppCompatActivity {
                 "Там чудеса: там леший бродит,\n" +
                 "Русалка на ветвях сидит;", 1) );
 
-        Messages.add(new Message(  fmt.format(new Date()), "Самое большое сообщение, которое не влазиет в одну строку, потому что мне надо проверить насколько много текста я могу записать в сообщение, поэтому бдует стих:\n" +
-                " У лукоморья дуб зелёный;\n" +
-                "Златая цепь на дубе том:\n" +
-                "И днём и ночью кот учёный\n" +
-                "Всё ходит по цепи кругом;\n" +
-                "Идёт направо — песнь заводит,\n" +
-                "Налево — сказку говорит.\n" +
-                "Там чудеса: там леший бродит,\n" +
-                "Русалка на ветвях сидит;", 0) );
+        Messages.add(new Message(  fmt.format(new Date()), "Я тоже хотел бы вам отправить большое длинное сообщение, но стихов я не знаю, поэтому анегдот:\n" +
+                "- А как всё хорошо начиналось! - подумал бомж, раскладывая немудрёную закуску на своём красном дипломе." ,
+                0) );
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
