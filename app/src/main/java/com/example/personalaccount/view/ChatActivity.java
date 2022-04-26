@@ -24,6 +24,8 @@ import java.util.Date;
 
 public class ChatActivity extends AppCompatActivity {
     ArrayList<Message> Messages = new ArrayList<Message>();
+    ImageView send;
+    EditText text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +35,9 @@ public class ChatActivity extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
 
 
-        EditText text = (EditText) findViewById(R.id.NewMessage);
+        text = (EditText) findViewById(R.id.NewMessage);
 
-        ImageView send = (ImageView) findViewById(R.id.SendMessage);
+        send = (ImageView) findViewById(R.id.SendMessage);
         ImageView addFile = (ImageView) findViewById(R.id.AddFile);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewMessages);
 
@@ -47,48 +49,9 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView.setAdapter(MessageAdapter);
 
 
-       /* MessageAdapter1 messageadapter = new MessageAdapter1();
-        messageadapter.setIncomingLayout(R.layout.message);
-        messageadapter.setOutgoingLayout(R.layout.message_outgoing);
-        messageadapter.setMessageTextId(R.id.MessageText);
-        messageadapter.setUserNameId(R.id.MessageUser);
-        messageadapter.setMessageTimeId(R.id.Date);
-        messageadapter.appendTo(recyclerView, this);
 
-        messageadapter.addMessage(
-                new MessageAdapter1.Message("Самое большое сообщение, которое не влазиет в одну строку, потому что мне надо проверить насколько много текста я могу записать в сообщение, поэтому бдует стих:\n" +
-                        " У лукоморья дуб зелёный;\n" +
-                        "Златая цепь на дубе том:\n" +
-                        "И днём и ночью кот учёный\n" +
-                        "Всё ходит по цепи кругом;\n" +
-                        "Идёт направо — песнь заводит,\n" +
-                        "Налево — сказку говорит.\n" +
-                        "Там чудеса: там леший бродит,\n" +
-                        "Русалка на ветвях сидит;", "Пушкин А.С.", true)
-        );
 
-        messageadapter.addMessage(
-                new MessageAdapter1.Message("Самое большое сообщение, которое не влазиет в одну строку, потому что мне надо проверить насколько много текста я могу записать в сообщение, поэтому бдует стих:\n" +
-                        " У лукоморья дуб зелёный;\n" +
-                        "Златая цепь на дубе том:\n" +
-                        "И днём и ночью кот учёный\n" +
-                        "Всё ходит по цепи кругом;\n" +
-                        "Идёт направо — песнь заводит,\n" +
-                        "Налево — сказку говорит.\n" +
-                        "Там чудеса: там леший бродит,\n" +
-                        "Русалка на ветвях сидит;", "Пушкин А.С.", false)
-        );
 
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String new_message = text.getText().toString();
-                messageadapter.addMessage(
-                        new MessageAdapter1.Message(new_message, "", false));
-                text.setText("");
-            }
-        });
-*/
 
     }
 
@@ -104,5 +67,28 @@ public class ChatActivity extends AppCompatActivity {
                 "Налево — сказку говорит.\n" +
                 "Там чудеса: там леший бродит,\n" +
                 "Русалка на ветвях сидит;", 1) );
+
+        Messages.add(new Message(  fmt.format(new Date()), "Самое большое сообщение, которое не влазиет в одну строку, потому что мне надо проверить насколько много текста я могу записать в сообщение, поэтому бдует стих:\n" +
+                " У лукоморья дуб зелёный;\n" +
+                "Златая цепь на дубе том:\n" +
+                "И днём и ночью кот учёный\n" +
+                "Всё ходит по цепи кругом;\n" +
+                "Идёт направо — песнь заводит,\n" +
+                "Налево — сказку говорит.\n" +
+                "Там чудеса: там леший бродит,\n" +
+                "Русалка на ветвях сидит;", 0) );
+
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String new_message = text.getText().toString();
+                Messages.add(new Message(  fmt.format(new Date()), new_message, 0) );
+                text.setText("");
+            }
+        });
     }
+
+
+
+
 }
