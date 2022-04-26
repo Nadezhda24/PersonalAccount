@@ -1,140 +1,63 @@
 package com.example.personalaccount.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import com.example.personalaccount.R;
+import com.example.personalaccount.model.Message;
+import com.example.personalaccount.model.Note;
+
 import java.util.List;
 
-public class MessageAdapter extends RecyclerView.Adapter {
-    private List<Message> messageList;
-    private RecyclerView recyclerView;
+public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder>{
+    private final LayoutInflater inflater ;
+    private final List<Message> Messages;
 
-    private static final int TYPE_INCOMING = 0;
-    private static final int TYPE_OUTGOING = 1;
-    private static final int MAX_MESSAGES = 1000;
-
-    private int messageTextId;
-    private int messageTimeId;
-    private int userNameId;
-    private int outgoingLayout;
-    private int incomingLayout;
-
-
-    public static class Message {
-        String text;
-        Date date;
-        String userName;
-        Boolean isOutgoing;
-
-        public Message(String text, String userName, Boolean isOutgoing) {
-            this.text = text;
-            this.userName = userName;
-            this.date = new Date();
-            this.isOutgoing = isOutgoing;
-        }
-    }
-    public class MessageView extends RecyclerView.ViewHolder {
-        TextView messageText;
-        TextView messageTime;
-        TextView userName;
-
-
-        MessageView(@NonNull View itemView, int messageTextId, int messageTimeId, int userNameId) {
-            super(itemView);
-            messageText = itemView.findViewById(messageTextId);
-            messageTime = itemView.findViewById(messageTimeId);
-            userName = itemView.findViewById(userNameId);
-        }
-
-        void bind(Message message) {
-            DateFormat fmt = SimpleDateFormat.getTimeInstance(DateFormat.SHORT);
-            messageText.setText(message.text);
-            messageTime.setText(fmt.format(message.date));
-            userName.setText(message.userName);
-        }
-    }
-
-
-    public MessageAdapter setMessageTextId(int messageTextId) {
-        this.messageTextId = messageTextId;
-        return this;
-    }
-
-    public MessageAdapter setMessageTimeId(int messageTimeId) {
-        this.messageTimeId = messageTimeId;
-        return this;
-    }
-
-    public MessageAdapter setUserNameId(int userNameId) {
-        this.userNameId = userNameId;
-        return this;
-    }
-
-    public MessageAdapter setOutgoingLayout(int outgoingLayout) {
-        this.outgoingLayout = outgoingLayout;
-        return this;
-    }
-
-    public MessageAdapter setIncomingLayout(int incomingLayout) {
-        this.incomingLayout = incomingLayout;
-        return this;
-    }
-
-    public MessageAdapter() {
-        this.messageList = new ArrayList<>();
-
-    }
-    public void appendTo(RecyclerView recyclerView, Context parent) {
-        this.recyclerView = recyclerView;
-        this.recyclerView.setLayoutManager(new LinearLayoutManager(parent));
-        this.recyclerView.setAdapter(this);
-    }
-    public void addMessage(Message m) {
-        messageList.add(m);
-        if (messageList.size() > MAX_MESSAGES) {
-            messageList = messageList.subList(messageList.size() - MAX_MESSAGES, messageList.size());
-        }
-        this.notifyDataSetChanged();
-        this.recyclerView.scrollToPosition(messageList.size() - 1);
+    public MessageAdapter(Context context, List<Message> Messages){
+        this.Messages = Messages;
+        this.inflater = LayoutInflater.from(context);
     }
 
     @Override
-    public int getItemViewType(int position) {
-        Message message = messageList.get(position);
-        return message.isOutgoing ? TYPE_OUTGOING : TYPE_INCOMING;
+    public MessageAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = inflater.inflate(R.layout.message_outgoing, parent, false);
+        return new MessageAdapter.ViewHolder(view);
     }
 
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int view_type) {
-        View view;
-        if (view_type == TYPE_OUTGOING) {
-            view = LayoutInflater.from(viewGroup.getContext()).inflate(outgoingLayout, viewGroup, false);
-        } else {
-            view = LayoutInflater.from(viewGroup.getContext()).inflate(incomingLayout, viewGroup, false);
-        }
-        return new MessageView(view, messageTextId, messageTimeId, userNameId);
-    }
 
+    @SuppressLint("ResourceAsColor")
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        Message message = messageList.get(i);
-        ((MessageView) viewHolder).bind(message);
+    public void onBindViewHolder(MessageAdapter.ViewHolder holder, int position) {
+        Message Message = Messages.get(position);
+        holder.Text.setText(Message.GetText());
+        holder.Time.setText(Message.GetTime());
+        holder.UserName.setText(Message.GetUserName());
+
     }
 
     @Override
     public int getItemCount() {
-        return messageList.size();
+        return Messages.size();
     }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        final TextView UserName, Text, Time;
+        final FrameLayout frameLayout;
+        ViewHolder(View view){
+            super(view);
+            UserName = (TextView) view.findViewById(R.id.MessageUser);
+            Text = (TextView) view.findViewById(R.id.MessageText);
+            Time = (TextView) view.findViewById(R.id.Date);
+            frameLayout = (FrameLayout) view.findViewById(R.id.frameLayout);
+        }
+    }
+
 }
