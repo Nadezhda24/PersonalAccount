@@ -29,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        getSupportActionBar().setTitle("Чат");
+        getSupportActionBar().setTitle("Лукьянов Павел Вадимович");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
 
 
@@ -56,7 +56,7 @@ public class ChatActivity extends AppCompatActivity {
     private void setInitialData(){
         DateFormat fmt = SimpleDateFormat.getTimeInstance(DateFormat.SHORT);
 
-        Messages.add(new Message("Пушкин А.С.",  fmt.format(new Date()), "Самое большое сообщение, которое не влазиет в одну строку, потому что мне надо проверить насколько много текста я могу записать в сообщение, поэтому бдует стих:\n" +
+        /*Messages.add(new Message("Пушкин А.С.",  fmt.format(new Date()), "Самое большое сообщение, которое не влазиет в одну строку, потому что мне надо проверить насколько много текста я могу записать в сообщение, поэтому бдует стих:\n" +
                 " У лукоморья дуб зелёный;\n" +
                 "Златая цепь на дубе том:\n" +
                 "И днём и ночью кот учёный\n" +
@@ -69,6 +69,10 @@ public class ChatActivity extends AppCompatActivity {
         Messages.add(new Message(  fmt.format(new Date()), "Я тоже хотел бы вам отправить большое длинное сообщение, но стихов я не знаю, поэтому анегдот:\n" +
                 "- А как всё хорошо начиналось! - подумал бомж, раскладывая немудрёную закуску на своём красном дипломе." ,
                 0) );
+*/
+        Messages.add(new Message(  fmt.format(new Date()), "Здравствуйте, скажите, пожалуйста, как будут проходить лабораторные работы?", 0) );
+        Messages.add(new Message(  "Лукьянов П.В.", fmt.format(new Date()), "Здравствуйте. Вариант соответствует порядковому номеру в списке группы. Можно выполнять в парах. Для пары берём номер варианта любого из участников. Если делаете в парах желательно прислать мне список кто с кем делает и какой вариант. Варианты должны отличаться.", 1) );
+        Messages.add(new Message(  fmt.format(new Date()), "Спасибо большое", 0) );
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
