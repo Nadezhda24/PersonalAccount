@@ -58,20 +58,21 @@ public class ChatActivity extends AppCompatActivity {
     private void setInitialData(){
         DateFormat fmt = SimpleDateFormat.getTimeInstance(DateFormat.SHORT);
 
+        Files =  new ArrayList<File>();
+        Messages.add(new Message(fmt.format(new Date()), "Здравствуйте, скажите, пожалуйста, как будут проходить лабораторные работы?", 0, 1, Files) );
+        Files =  new ArrayList<File>();
         Files.add (new File("Задания.docx"));
-        Files.add (new File("Задания.docx"));
-        Files.add (new File("Задания.docx"));
-        Files.add (new File("Задания.docx"));
-        Messages.add(new Message(  fmt.format(new Date()), "Здравствуйте, скажите, пожалуйста, как будут проходить лабораторные работы?", 0, Files) );
 
         Messages.add(new Message(  "Лукьянов П.В.", fmt.format(new Date()), "Здравствуйте. Вариант соответствует порядковому номеру в списке группы. Можно выполнять в парах. Для пары берём номер варианта любого из участников. Если делаете в парах желательно прислать мне список кто с кем делает и какой вариант. Варианты должны отличаться.", 1, Files) );
-        Messages.add(new Message(  fmt.format(new Date()), "Спасибо большое", 0, Files) );
+        Files =  new ArrayList<File>();
+        Messages.add(new Message(fmt.format(new Date()), "Спасибо большое", 0,0, Files) );
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Files =  new ArrayList<File>();
                 String new_message = text.getText().toString();
-                Messages.add(new Message(  fmt.format(new Date()), new_message,0, Files) );
+                Messages.add(new Message(  fmt.format(new Date()), new_message,0,0, Files) );
                 text.setText("");
             }
         });

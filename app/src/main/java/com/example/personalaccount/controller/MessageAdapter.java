@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,7 +37,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         switch (viewType)
         {
             case OUTPUT:
-                return new MessageAdapter.ViewHolder(inflater.inflate(R.layout.message, parent, false));
+                return new MessageAdapter.ViewHolderOutput(inflater.inflate(R.layout.message, parent, false));
             case INPUT:
                 return new MessageAdapter.ViewHolderInput(inflater.inflate(R.layout.message_outgoing, parent, false));
             default:
@@ -62,9 +63,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         switch (holder.getItemViewType()) {
             case OUTPUT:
-                ViewHolder output = (ViewHolder) holder;
+                ViewHolderOutput output = (ViewHolderOutput) holder;
                 output.Text.setText(Message.GetText());
                 output.Time.setText(Message.GetTime());
+                if (Message.GetIsRead() == 0) output.imageView.setImageResource(R.drawable.circle);
                 output.recyclerView.setLayoutManager(new LinearLayoutManager(inflater.getContext()));
                 FileAdapter FileAdapter_input = new FileAdapter(inflater.getContext(),Message.GetFiles());
                 output.recyclerView.setAdapter(FileAdapter_input);
@@ -91,6 +93,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         final TextView Text, Time;
         final FrameLayout frameLayout;
         final RecyclerView recyclerView;
+
         ViewHolder(View view){
             super(view);
             Text = (TextView) view.findViewById(R.id.MessageText);
@@ -100,6 +103,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         }
     }
 
+
     public static class ViewHolderInput extends ViewHolder{
 
         final TextView UserName;
@@ -107,6 +111,16 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         ViewHolderInput(View view) {
             super(view);
             UserName = (TextView) view.findViewById(R.id.MessageUser);
+        }
+    }
+
+    public static class ViewHolderOutput extends ViewHolder{
+
+        final ImageView imageView;
+
+        ViewHolderOutput(View view) {
+            super(view);
+            imageView = (ImageView) view.findViewById(R.id.IsRead);
         }
     }
 
