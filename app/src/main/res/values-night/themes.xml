@@ -26,5 +26,7 @@
     <drawable name="send">@drawable/send_black</drawable>
     <drawable name="more">@drawable/more_black</drawable>
     <drawable name="file_fon">@drawable/file_fon_black</drawable>
+    <drawable name="list_fon">@drawable/list_fon_black</drawable>
+    <drawable name="dialog_fon">@drawable/dialog_fon_black</drawable>
 
 </resources>

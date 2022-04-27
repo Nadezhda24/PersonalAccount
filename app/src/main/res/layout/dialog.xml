@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="fill_horizontal"
-    android:background="@android:color/primary_text_dark_nodisable"
+    android:background="@drawable/dialog_fon"
     android:foregroundGravity="fill_horizontal"
+    android:padding="5dp"
     app:layout_anchorGravity="fill_horizontal">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:foregroundGravity="fill_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

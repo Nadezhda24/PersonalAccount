@@ -4,7 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/border.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/circle.xml" value="0.1325" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/dialog_fon_black.xml" value="0.2155" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/dialog_fon_light.xml" value="0.2155" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/file_fon.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/file_fon_black.xml" value="0.1325" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/file_fon_light.xml" value="0.1965" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/list_fon_black.xml" value="0.194" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/list_fon_light.xml" value="0.194" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/rounded_layout.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/schedule_fon_black.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/schedule_fon_light.xml" value="0.18020833333333333" />
@@ -12,20 +19,24 @@
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/drawable/table_light.xml" value="0.1" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_auth.xml" value="0.24094202898550723" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_chat.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_choise.xml" value="0.4" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_edu_subject.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_education.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_graduation_work_history.xml" value="0.23233695652173914" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_message_system.xml" value="0.20208333333333334" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_new_note.xml" value="0.536" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_new_note.xml" value="0.152" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_new_task.xml" value="0.24682971014492755" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_note.xml" value="0.1421875" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_note.xml" value="0.2" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_note_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_results.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_schedule.xml" value="0.264" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/activity_schedule_tabbed.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/category.xml" value="0.25" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/chat.xml" value="0.21331521739130435" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/choise.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/comment.xml" value="0.5357894736842105" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/dialog.xml" value="0.1984375" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/edu_score_subject.xml" value="0.1" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/edu_subject.xml" value="0.6" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/file.xml" value="0.16041666666666668" />
@@ -39,11 +50,12 @@
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_schedueweek.xml" value="0.264" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_schedule.xml" value="0.25245098039215685" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_schedule_tabbed.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_system_message.xml" value="0.16" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/message.xml" value="0.536" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/message_outgoing.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/fragment_system_message.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/list.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/message.xml" value="0.378727634194831" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/message_outgoing.xml" value="0.264" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/note.xml" value="0.24094202898550723" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/schedule_day.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/schedule_day.xml" value="0.6" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/schedule_exam.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/starus_comment.xml" value="0.25" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/starus_file.xml" value="0.25" />
@@ -59,43 +71,22 @@
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task6.xml" value="0.25" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_button.xml" value="0.25" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_comment.xml" value="0.12132725430597771" />
-        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file.xml" value="0.16041666666666668" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file.xml" value="0.25" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file_button.xml" value="0.1" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file_comment.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/layout/task_file_comment_button.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
         <entry key="..\:/Users/Asus/Documents/GitHub/PersonalAccount/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.20208333333333334" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/drawable/file_fon.xml" value="0.12962962962962962" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/drawable/schedule_fon_black.xml" value="0.3828125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/drawable/schedule_fon_light.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_auth.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_chat.xml" value="0.22" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_choice_schedule.xml" value="0.29739583333333336" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_graduation_work_history.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_chat.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_new_chat.xml" value="0.2786458333333333" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_new_note.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/activity_new_task.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/category.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/chat.xml" value="0.75" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/dialog.xml" value="0.67" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/file.xml" value="0.5" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/file.xml" value="0.9" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/fragment_graduation_work.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/fragment_note_list.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/fragment_result.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/fragment_schedule.xml" value="0.5" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/fragment_system_message.xml" value="0.28802083333333334" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/list.xml" value="0.75" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/message.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/message_outgoing.xml" value="0.5" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/note.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/task_button.xml" value="0.25181159420289856" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/task_comment.xml" value="0.31197916666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/task_file.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/task_file_button.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/task_file_comment.xml" value="0.31197916666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/layout/task_simple.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PersonalAccont/PersonalAccount/app/src/main/res/menu/choise_schedule.xml" value="0.2" />
       </map>
     </option>
   </component>
