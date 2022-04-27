@@ -26,11 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
 import java.util.ArrayList;
-
-import javax.net.ssl.HttpsURLConnection;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,7 +44,7 @@ public class GraduationWorkFragment extends Fragment {
 
     private static String URL = "https://api.oreluniver.ru/api/task/0";
 
-    int UserType = 1;
+    int UserType = 0;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

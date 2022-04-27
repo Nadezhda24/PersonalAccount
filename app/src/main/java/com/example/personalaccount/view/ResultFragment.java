@@ -1,20 +1,18 @@
 package com.example.personalaccount.view;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TableLayout;
-import android.widget.Toast;
-
 import com.example.personalaccount.R;
-import com.example.personalaccount.model.Result;
 import com.example.personalaccount.controller.ResultAdapter;
+import com.example.personalaccount.model.Result;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -121,7 +119,7 @@ public class ResultFragment extends Fragment {
 
 
     private void setInitialData(int semestr){
-        Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
+        /*Results.add(new Result("Функциональное и логическое программирование", "Гордиенко А.П.", "Зачет", "Зачтено"));
         Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
         Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
         Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
@@ -129,6 +127,12 @@ public class ResultFragment extends Fragment {
         Results.add(new Result("Качество и тестирование программного обеспечения\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
         Results.add(new Result("Основы управления программными проектами\n(Промышленная разработка программного обеспечения)", "Ужаринский А.Ю.", "Экзамен", "Отлично"));
         Results.add(new Result("Программирование микроконтроллеров", "Захарова О.В.", "Экзамен", "Отлично"));
+*/
+        Results.add(new Result("Информационная безопасность", "Еременко В.Т.", "Зачет", "Зачтено"));
+        Results.add(new Result("Проектная деятельность", "Конюхова О.В.", "Зачет", "Зачтено"));
+        Results.add(new Result("Проектная деятельность(К/П)", "Конюхова О.В.", "К/П", "Отлично"));
+        Results.add(new Result("Этические основы коммуникации в поликультурном пространстве", "Гревцева А.А.", "Зачет", "Зачтено"));
+
 
     }
 }

@@ -2,7 +2,6 @@ package com.example.personalaccount.controller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,6 +98,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
             case REVISION:
                 StatusAdapter.ViewHolderComment revision = (StatusAdapter.ViewHolderComment) holder;
                 revision.Status.setText("Задача отправлена на доработку " + Status.GetStatusDate());
+                revision.Comment.setText(Status.GetStatusComment());
                 break;
             case COMPLETED:
                 StatusAdapter.ViewHolder completed = (StatusAdapter.ViewHolder) holder;
