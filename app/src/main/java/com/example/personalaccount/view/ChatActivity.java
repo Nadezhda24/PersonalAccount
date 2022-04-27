@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccount.R;
 import com.example.personalaccount.controller.MessageAdapter;
+import com.example.personalaccount.model.File;
 import com.example.personalaccount.model.Message;
 
 import java.text.DateFormat;
@@ -22,6 +23,7 @@ import java.util.Date;
 
 public class ChatActivity extends AppCompatActivity {
     ArrayList<Message> Messages = new ArrayList<Message>();
+    ArrayList<File> Files =  new ArrayList<File>();
     ImageView send;
     EditText text;
     @Override
@@ -70,15 +72,17 @@ public class ChatActivity extends AppCompatActivity {
                 "- А как всё хорошо начиналось! - подумал бомж, раскладывая немудрёную закуску на своём красном дипломе." ,
                 0) );
 */
-        Messages.add(new Message(  fmt.format(new Date()), "Здравствуйте, скажите, пожалуйста, как будут проходить лабораторные работы?", 0) );
-        Messages.add(new Message(  "Лукьянов П.В.", fmt.format(new Date()), "Здравствуйте. Вариант соответствует порядковому номеру в списке группы. Можно выполнять в парах. Для пары берём номер варианта любого из участников. Если делаете в парах желательно прислать мне список кто с кем делает и какой вариант. Варианты должны отличаться.", 1) );
-        Messages.add(new Message(  fmt.format(new Date()), "Спасибо большое", 0) );
+        //Files.add (new File("Задания.docx"));
+        Messages.add(new Message(  fmt.format(new Date()), "Здравствуйте, скажите, пожалуйста, как будут проходить лабораторные работы?", 0, Files) );
+
+        Messages.add(new Message(  "Лукьянов П.В.", fmt.format(new Date()), "Здравствуйте. Вариант соответствует порядковому номеру в списке группы. Можно выполнять в парах. Для пары берём номер варианта любого из участников. Если делаете в парах желательно прислать мне список кто с кем делает и какой вариант. Варианты должны отличаться.", 1, Files) );
+        Messages.add(new Message(  fmt.format(new Date()), "Спасибо большое", 0, Files) );
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String new_message = text.getText().toString();
-                Messages.add(new Message(  fmt.format(new Date()), new_message, 0) );
+                Messages.add(new Message(  fmt.format(new Date()), new_message,0, Files) );
                 text.setText("");
             }
         });

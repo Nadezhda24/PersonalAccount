@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccount.R;
@@ -23,6 +24,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     private final LayoutInflater inflater ;
     private final List<Message> Messages;
+
 
     public MessageAdapter(Context context, List<Message> Messages){
         this.Messages = Messages;
@@ -63,12 +65,18 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                 ViewHolder output = (ViewHolder) holder;
                 output.Text.setText(Message.GetText());
                 output.Time.setText(Message.GetTime());
+                output.recyclerView.setLayoutManager(new LinearLayoutManager(inflater.getContext()));
+                FileAdapter FileAdapter_input = new FileAdapter(inflater.getContext(),Message.GetFiles());
+                output.recyclerView.setAdapter(FileAdapter_input);
         break;
             case INPUT:
                 ViewHolderInput input = (ViewHolderInput) holder;
                 input.Text.setText(Message.GetText());
                 input.Time.setText(Message.GetTime());
                 input.UserName.setText(Message.GetUserName());
+                input.recyclerView.setLayoutManager(new LinearLayoutManager(inflater.getContext()));
+                FileAdapter FileAdapter_output = new FileAdapter(inflater.getContext(),Message.GetFiles());
+                input.recyclerView.setAdapter(FileAdapter_output);
                 break;
         }
     }
@@ -82,11 +90,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         final TextView Text, Time;
         final FrameLayout frameLayout;
+        final RecyclerView recyclerView;
         ViewHolder(View view){
             super(view);
             Text = (TextView) view.findViewById(R.id.MessageText);
             Time = (TextView) view.findViewById(R.id.Date);
             frameLayout = (FrameLayout) view.findViewById(R.id.frameLayout);
+            recyclerView  = (RecyclerView) view.findViewById(R.id.recyclerViewFiles);
         }
     }
 
