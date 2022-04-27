@@ -35,7 +35,7 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
     @Override
     public void onBindViewHolder(ListItemAdapter.ViewHolder holder, int position) {
         ListItem Item = Items.get(position);
-        holder.Item.setText("Item.GetItem()");
+        holder.Item.setText(Item.GetItem());
     }
 
     @Override

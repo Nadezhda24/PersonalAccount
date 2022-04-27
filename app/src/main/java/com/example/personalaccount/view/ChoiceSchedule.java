@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,15 +53,37 @@ public class ChoiceSchedule extends AppCompatActivity {
         button3.setText("Выбрать группу");
 
 
-
+        Items.add(new ListItem("АСИ"));
+        Items.add(new ListItem("ИЕНиБ"));
+        Items.add(new ListItem("ИЕНиБ"));
+        Items.add(new ListItem("ИВЗО"));
+        Items.add(new ListItem("Иняз"));
+        Items.add(new ListItem("ИПиП"));
+        Items.add(new ListItem("ИПАИТ"));
+        Items.add(new ListItem("ИФил"));
+        Items.add(new ListItem("ИЭиУ"));
+        Items.add(new ListItem("ИстФак"));
+        Items.add(new ListItem("ЛФ"));
+        Items.add(new ListItem("Асп"));
+        Items.add(new ListItem("Ординатура"));
+        Items.add(new ListItem("ПТИ"));
+        Items.add(new ListItem("СоцФак"));
+        Items.add(new ListItem("ФПСиФ"));
+        Items.add(new ListItem("ФТПиС"));
+        Items.add(new ListItem("ФФКС"));
+        Items.add(new ListItem("ФизМат"));
+        Items.add(new ListItem("Филос"));
+        Items.add(new ListItem("ХГФ"));
+        Items.add(new ListItem("ЮИ"));
         final Dialog[] dialog = new Dialog[1];
         dialog[0] = new Dialog(ChoiceSchedule.this);
+        dialog[0].getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog[0].setContentView(R.layout.dialog);
 
-        Items.add(new ListItem("Ипаит"));
+
         RecyclerView recyclerView = (RecyclerView)  dialog[0].findViewById(R.id.RecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        ListItemAdapter listItemAdapter = new ListItemAdapter(this, Items);
+        recyclerView.setLayoutManager(new LinearLayoutManager(dialog[0].getContext()));
+        ListItemAdapter listItemAdapter = new ListItemAdapter(dialog[0].getContext(), Items);
         recyclerView.setAdapter(listItemAdapter);
 
                 button1.setOnClickListener(new View.OnClickListener() {
