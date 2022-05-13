@@ -84,6 +84,12 @@ public class SystemMessageFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_system_message, container, false);
 
+
+        //int id_user =  getArguments().getInt("id");
+        int id_user = 180820;
+        URL = "https://api.oreluniver.ru/api/dialogue/" + id_user;
+
+
         setInitialData();
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewChats);
@@ -113,6 +119,9 @@ public class SystemMessageFragment extends Fragment {
         ChatAdapter = new ChatAdapter(getActivity(),Chats, chatClickListener);
 
         recyclerView.setAdapter(ChatAdapter);
+
+
+
 
         return view;
     }

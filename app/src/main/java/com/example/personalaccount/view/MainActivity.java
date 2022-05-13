@@ -32,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
 
+        Bundle arguments = getIntent().getExtras();
+        int id =  arguments.getInt("id");
+        Bundle bundle = new Bundle();
+        bundle.putInt("id", id);
+        SystemMessageFragment messageFragment = new SystemMessageFragment();
+        messageFragment.setArguments(bundle);
+
 
         //Initialize NavController.
         NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
