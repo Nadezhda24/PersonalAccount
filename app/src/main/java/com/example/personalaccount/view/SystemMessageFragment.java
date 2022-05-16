@@ -19,6 +19,7 @@ import com.example.personalaccount.controller.ChatAdapter;
 import com.example.personalaccount.controller.HTTPHandler;
 import com.example.personalaccount.model.Chat;
 import com.example.personalaccount.model.Task;
+import com.google.android.material.tabs.TabLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +34,10 @@ import java.util.ArrayList;
  */
 public class SystemMessageFragment extends Fragment {
 
+    ArrayList<Chat> ChatList = new ArrayList<Chat>();
     ArrayList<Chat> Chats = new ArrayList<Chat>();
+    ArrayList<Chat> PersanalChats = new ArrayList<Chat>();
+    ArrayList<Chat> GroupChats = new ArrayList<Chat>();
 
     String jsonRes = null;
 
@@ -84,17 +88,9 @@ public class SystemMessageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_system_message, container, false);
-
-
-        //int id_user =  getArguments().getInt("id");
-        int id_user = 180820;
-        URL = "https://api.oreluniver.ru/api/dialogue/" + id_user;
-
-
-        setInitialData();
-
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewChats);
-
+        TabLayout tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout) ;
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ChatAdapter.OnChatClickListener chatClickListener = new ChatAdapter.OnChatClickListener() {
             @Override
             public void onChatClick(Chat chat, int position) {
@@ -106,6 +102,44 @@ public class SystemMessageFragment extends Fragment {
             }
         } ;
 
+        //int id_user =  getArguments().getInt("id");
+        int id_user = 180820;
+        URL = "https://api.oreluniver.ru/api/dialogue/" + id_user;
+
+        setInitialData();
+        ChatList = Chats;
+        ChatAdapter = new ChatAdapter(getActivity(),ChatList, chatClickListener);
+        recyclerView.setAdapter(ChatAdapter);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                if (String.valueOf(tab.getText()).equals("Личные"))  ChatList = PersanalChats;
+                else if  (String.valueOf(tab.getText()).equals("Групповые")) ChatList = GroupChats;
+                else ChatList = Chats;
+
+                ChatAdapter = new ChatAdapter(getActivity(),ChatList, chatClickListener);
+                recyclerView.setAdapter(ChatAdapter);
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+
+
+
         android.widget.ImageView ImageView = (ImageView) view.findViewById(R.id.add);
         ImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,10 +150,7 @@ public class SystemMessageFragment extends Fragment {
         });
 
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ChatAdapter = new ChatAdapter(getActivity(),Chats, chatClickListener);
 
-        recyclerView.setAdapter(ChatAdapter);
 
 
 
@@ -159,8 +190,11 @@ public class SystemMessageFragment extends Fragment {
                     for (int i=0; i < arr.length(); i++) {
                         JSONObject obj = arr.getJSONObject(i);
                         int id = Integer.parseInt(obj.getString("id_dialogue"));
+                        String type = obj.getString("type");
                         String topic = obj.getString("topic");
-                          Chats.add(new Chat(id,topic, 0));
+                          Chats.add(new Chat(id,type, topic, 0));
+                          if(type.equals("personal"))PersanalChats.add(new Chat(id,type, topic, 0));
+                          if(type.equals("group"))GroupChats.add(new Chat(id,type, topic, 0));
                     }
 
                 } catch (JSONException e) {

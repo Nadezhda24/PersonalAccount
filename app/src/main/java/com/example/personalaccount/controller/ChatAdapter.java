@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +46,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         Chat Chat = Chats.get(position);
         holder.ChatTitle.setText(Chat.GetChatTitle());
         if(Chat.GetChatCountUnread() > 0) holder.ChatCountUnread.setText(Chat.GetChatCountUnread());
+        if(!Chat.GetChatType().equals("personal")) holder.ChatPhoto.setImageResource(R.drawable.group_chat);
+        else holder.ChatPhoto.setImageResource(R.drawable.user_char);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,10 +66,12 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         final TextView ChatTitle,ChatCountUnread ;
+        final ImageView ChatPhoto;
         final FrameLayout frameLayout;
         ViewHolder(View view){
             super(view);
             ChatTitle = (TextView) view.findViewById(R.id.ChatTitle);
+            ChatPhoto = (ImageView) view.findViewById(R.id.ChatPhoto);
             ChatCountUnread = (TextView) view.findViewById(R.id.ChatCountUnread);
             frameLayout = (FrameLayout) view.findViewById(R.id.frameLayout);
         }
