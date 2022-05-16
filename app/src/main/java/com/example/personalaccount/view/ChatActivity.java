@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -50,6 +52,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+
         Bundle arguments = getIntent().getExtras();
         int id_dialog =  arguments.getInt("id_dialog");
         int id_user =  arguments.getInt("id_user");
@@ -73,6 +76,13 @@ public class ChatActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(MessageAdapter);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.dialogue_info, menu);
+        return true;
     }
 
     private void setInitialData(){
