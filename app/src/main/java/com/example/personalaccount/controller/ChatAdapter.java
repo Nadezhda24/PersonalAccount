@@ -44,8 +44,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     public void onBindViewHolder(ChatAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Chat Chat = Chats.get(position);
         holder.ChatTitle.setText(Chat.GetChatTitle());
-        holder.ChatCountUnread.setText(Chat.GetChatCountUnread());
-
+        if(Chat.GetChatCountUnread() > 0) holder.ChatCountUnread.setText(Chat.GetChatCountUnread());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

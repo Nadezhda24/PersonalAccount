@@ -18,6 +18,7 @@ import com.example.personalaccount.R;
 import com.example.personalaccount.controller.ChatAdapter;
 import com.example.personalaccount.controller.HTTPHandler;
 import com.example.personalaccount.model.Chat;
+import com.example.personalaccount.model.Task;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,7 +37,7 @@ public class SystemMessageFragment extends Fragment {
 
     String jsonRes = null;
 
-    private static String URL = "https://api.oreluniver.ru/api/task/0";
+    private static String URL ;
 
     ChatAdapter ChatAdapter;
     // TODO: Rename parameter arguments, choose names that match
@@ -129,12 +130,6 @@ public class SystemMessageFragment extends Fragment {
 
 
     private void setInitialData(){
-        Chats.add(new Chat("Функциональное и логическое программирование",  ""));
-        Chats.add(new Chat("Функциональное и логическое программирование", ""));
-      }
-
-/*
-    private void setInitialData(){
         try {
             new GetData().execute().get();
         } catch (Exception e) {
@@ -155,7 +150,6 @@ public class SystemMessageFragment extends Fragment {
         @Override
         protected void onPostExecute(Void v) {
 
-
             if (jsonRes != null){
                 JSONObject json = null;
 
@@ -163,8 +157,10 @@ public class SystemMessageFragment extends Fragment {
                     json = new JSONObject("{\"chats\": " + jsonRes + " }");
                     JSONArray arr = json.getJSONArray("chats");
                     for (int i=0; i < arr.length(); i++) {
-
-                        //  Chats.add(new Chat());
+                        JSONObject obj = arr.getJSONObject(i);
+                        int id = Integer.parseInt(obj.getString("id_dialogue"));
+                        String topic = obj.getString("topic");
+                          Chats.add(new Chat(id,topic, 0));
                     }
 
                 } catch (JSONException e) {
@@ -182,10 +178,10 @@ public class SystemMessageFragment extends Fragment {
                 });
             }
             else {
-                Toast.makeText(getActivity(), "У Вас нет задач",
+                Toast.makeText(getActivity(), "У Вас пока нет диалогов",
                         Toast.LENGTH_SHORT).show();
             }
         }
     }
-*/
+
 }
