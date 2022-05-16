@@ -1,37 +1,62 @@
 package com.example.personalaccount.view;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccount.R;
+import com.example.personalaccount.controller.HTTPHandler;
 import com.example.personalaccount.controller.MessageAdapter;
+import com.example.personalaccount.model.Chat;
 import com.example.personalaccount.model.File;
 import com.example.personalaccount.model.Message;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class ChatActivity extends AppCompatActivity {
     ArrayList<Message> Messages = new ArrayList<Message>();
     ArrayList<File> Files =  new ArrayList<File>();
     ImageView send;
     EditText text;
+    String URL;
+    BufferedReader reader=null;
+    InputStream stream = null;
+    HttpsURLConnection connection = null;
+    String jsonRes = null;
+    Chat Dialog = new Chat();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        getSupportActionBar().setTitle("Лукьянов Павел Вадимович");
+        Bundle arguments = getIntent().getExtras();
+        int id_dialog =  arguments.getInt("id_dialog");
+        int id_user =  arguments.getInt("id_user");
+        String topic =  arguments.getString("topic");
+        URL = "https://api.oreluniver.ru/api/dialogue/" + id_user + "/" + id_dialog;
+
+        getSupportActionBar().setTitle(topic);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
 
 
@@ -47,11 +72,6 @@ public class ChatActivity extends AppCompatActivity {
         MessageAdapter MessageAdapter = new MessageAdapter(this, Messages);
 
         recyclerView.setAdapter(MessageAdapter);
-
-
-
-
-
 
     }
 

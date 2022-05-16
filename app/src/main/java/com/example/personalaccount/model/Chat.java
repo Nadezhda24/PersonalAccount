@@ -7,6 +7,13 @@ public class Chat {
     private String ChatType;
     private int ChatCountUnread;
 
+    public Chat(){
+        this.ChatId = -1;
+        this.ChatType = "persanal";
+        this.ChatTitle ="";
+        this.ChatCountUnread = 0;
+    }
+
     public Chat(int ChatId, String ChatType, String ChatTitle, int ChatCountUnread ){
         this.ChatId = ChatId;
         this.ChatType = ChatType;

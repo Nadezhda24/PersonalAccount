@@ -87,23 +87,29 @@ public class SystemMessageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        int id_user = 180820;
+
         View view = inflater.inflate(R.layout.fragment_system_message, container, false);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerViewChats);
         TabLayout tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
+
         ChatAdapter.OnChatClickListener chatClickListener = new ChatAdapter.OnChatClickListener() {
             @Override
             public void onChatClick(Chat chat, int position) {
-                Toast.makeText(getActivity(), "Был выбран пункт " + chat.GetChatTitle(),
-                        Toast.LENGTH_SHORT).show();
-
                 Intent intent=new Intent(getContext(),ChatActivity.class);
+                intent.putExtra( "topic",chat.GetChatTitle());
+                intent.putExtra( "id_dialog",chat.GetChatId());
+                intent.putExtra( "id_user",id_user);
                 startActivity(intent);
             }
         } ;
 
         //int id_user =  getArguments().getInt("id");
-        int id_user = 180820;
+
         URL = "https://api.oreluniver.ru/api/dialogue/" + id_user;
 
         setInitialData();
