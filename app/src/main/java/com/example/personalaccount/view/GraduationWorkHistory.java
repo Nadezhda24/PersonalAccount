@@ -66,7 +66,7 @@ public class GraduationWorkHistory extends AppCompatActivity {
 
            try {
             new GetData().execute().get();
-        } catch (Exception e) { //TODO: сделать нормальное решение для catch
+        } catch (Exception e) {
             Toast.makeText(GraduationWorkHistory.this, "Проверьте соединение с интернетом",
                     Toast.LENGTH_SHORT).show();
         }

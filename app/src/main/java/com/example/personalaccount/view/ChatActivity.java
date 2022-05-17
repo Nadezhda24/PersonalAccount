@@ -46,7 +46,8 @@ public class ChatActivity extends AppCompatActivity {
     InputStream stream = null;
     HttpsURLConnection connection = null;
     String jsonRes = null;
-    Chat Dialog = new Chat();
+    Chat Dialogue = new Chat();
+    MessageAdapter MessageAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +58,12 @@ public class ChatActivity extends AppCompatActivity {
         int id_dialog =  arguments.getInt("id_dialog");
         int id_user =  arguments.getInt("id_user");
         String topic =  arguments.getString("topic");
-        URL = "https://api.oreluniver.ru/api/dialogue/" + id_user + "/" + id_dialog;
+        //URL = "https://api.oreluniver.ru/api/dialogue/" + id_user + "/" + id_dialog;
+        URL = "http://api.oreluniver.ru/api/dialogue/message/" + id_user + "/" + id_dialog;
+
+
+
+
 
         getSupportActionBar().setTitle(topic);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(108,164,208)));
@@ -72,7 +78,7 @@ public class ChatActivity extends AppCompatActivity {
         setInitialData();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        MessageAdapter MessageAdapter = new MessageAdapter(this, Messages);
+        MessageAdapter = new MessageAdapter(this, Messages);
 
         recyclerView.setAdapter(MessageAdapter);
 
@@ -85,6 +91,62 @@ public class ChatActivity extends AppCompatActivity {
         return true;
     }
 
+ /*   private void setInitialData(){
+        try {
+            new GetData().execute().get();
+        } catch (Exception e) {
+            Toast.makeText(this, "Проверьте соединение с интернетом",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private class GetData extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            HTTPHandler sh = new HTTPHandler();
+            String jsonStr = sh.getData(URL, "GET");
+            jsonRes = jsonStr;
+            return null;
+        }
+        //выполняется после doInBackground
+        @Override
+        protected void onPostExecute(Void v) {
+            DateFormat fmt = SimpleDateFormat.getTimeInstance(DateFormat.SHORT);
+            if (jsonRes != null){
+                JSONObject json = null;
+
+                try {
+                    json = new JSONObject("{\"chats\": " + jsonRes + " }");
+                    JSONArray arr = json.getJSONArray("chats");
+                    for (int i=0; i < arr.length(); i++) {
+                        JSONObject obj = arr.getJSONObject(i);
+                        int id = Integer.parseInt(obj.getString("id_dialogue"));
+                        String type = obj.getString("type");
+                        String topic = obj.getString("topic");
+                        Messages.add(new Message(fmt.format(new Date()), "Здравствуйте, скажите, пожалуйста, как будут проходить лабораторные работы?", 0, 1, Files) );
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+                ChatActivity.this.runOnUiThread(new Runnable() {
+                    @SuppressLint("NotifyDataSetChanged")
+                    @Override
+                    public void run() {
+                        MessageAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+            else {
+                Toast.makeText(ChatActivity.this, "У Вас пока нет диалогов",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+*/
     private void setInitialData(){
         DateFormat fmt = SimpleDateFormat.getTimeInstance(DateFormat.SHORT);
 
@@ -107,7 +169,6 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
 

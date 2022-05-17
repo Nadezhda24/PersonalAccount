@@ -45,7 +45,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     public void onBindViewHolder(ChatAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Chat Chat = Chats.get(position);
         holder.ChatTitle.setText(Chat.GetChatTitle());
-        if(Chat.GetChatCountUnread() > 0) holder.ChatCountUnread.setText(Chat.GetChatCountUnread());
+        if(Chat.GetChatCountUnread() > 0) holder.ChatCountUnread.setText(Integer. toString(Chat.GetChatCountUnread()));
         if(!Chat.GetChatType().equals("personal")) holder.ChatPhoto.setImageResource(R.drawable.group_chat);
         else holder.ChatPhoto.setImageResource(R.drawable.user_char);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
